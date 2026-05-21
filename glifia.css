@@ -278,10 +278,4 @@ body {
   border-top: 0.5px solid rgba(244,237,224,0.1);
 }
 #gnav-panel li:first-child.gnav-group-label { border-top: none; }
-.gnav-num {
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  opacity: 0.5;
-  min-width: 2.5rem;
-}
 .gnav-title { font-size: 0.9rem; }

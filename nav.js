@@ -3,56 +3,56 @@
     {
       label: '',
       pages: [
-        { file: 'identikit.html', num: '', title: 'Identikit' },
+        { file: 'identikit.html', title: 'Identikit' },
       ]
     },
     {
       label: 'ARTICOLI',
       pages: [
-        { file: 'articoli/tavola-2-marcatori.html', num: 'II', title: 'Articoli e marcatori' },
+        { file: 'articoli/marcatori.html', title: 'Articoli e marcatori' },
       ]
     },
     {
       label: 'PREPOSIZIONI',
       pages: [
-        { file: 'preposizioni/tavola-3-preposizioni.html', num: 'III', title: 'Le preposizioni' },
+        { file: 'preposizioni/preposizioni.html', title: 'Le preposizioni' },
       ]
     },
     {
       label: 'NUMERALI',
       pages: [
-        { file: 'numerali/tavola-6-numerali.html', num: 'VI', title: 'I numerali' },
+        { file: 'numerali/numerali.html', title: 'I numerali' },
       ]
     },
     {
       label: 'PRONOMI',
       pages: [
-        { file: 'pronomi/tavola-7-pronomi.html',              num: 'VII', title: 'I pronomi personali' },
-        { file: 'pronomi/tavola-10-interrogativi.html',       num: 'X',   title: 'Pronomi interrogativi' },
-        { file: 'pronomi/tavola-11-indefiniti-quantita.html', num: 'XI',  title: 'Indefiniti di quantità' },
+        { file: 'pronomi/pronomi.html',              title: 'I pronomi personali' },
+        { file: 'pronomi/interrogativi.html',         title: 'Pronomi interrogativi' },
+        { file: 'pronomi/indefiniti-quantita.html',   title: 'Indefiniti di quantità' },
       ]
     },
     {
       label: 'AGGETTIVI',
       pages: [
-        { file: 'aggettivi/tavola-9-agg-possessivi.html', num: 'IX', title: 'Aggettivi possessivi' },
+        { file: 'aggettivi/agg-possessivi.html', title: 'Aggettivi possessivi' },
       ]
     },
     {
       label: 'FRASI',
       pages: [
-        { file: 'frasi/prova-casa-nuova.html',         num: '·',    title: 'La casa è nuova' },
-        { file: 'frasi/tavola-4-bambini-parco.html',   num: 'IV',   title: 'I bambini nel parco' },
-        { file: 'frasi/tavola-5-zaino-bambino.html',   num: 'V',    title: 'Lo zaino del bambino' },
-        { file: 'frasi/tavola-8-cane-mangiato.html',   num: 'VIII', title: 'Il mio cane' },
-        { file: 'frasi/tavola-12-tuoi-bambini.html',   num: 'XII',  title: 'I tuoi bambini' },
-        { file: 'frasi/tavola-13-bambino-marco.html',  num: 'XIII', title: 'Il bambino di Marco' },
+        { file: 'frasi/prova-casa-nuova.html',  title: 'La casa è nuova' },
+        { file: 'frasi/bambini-parco.html',      title: 'I bambini nel parco' },
+        { file: 'frasi/zaino-bambino.html',      title: 'Lo zaino del bambino' },
+        { file: 'frasi/cane-mangiato.html',      title: 'Il mio cane' },
+        { file: 'frasi/tuoi-bambini.html',       title: 'I tuoi bambini' },
+        { file: 'frasi/bambino-marco.html',      title: 'Il bambino di Marco' },
       ]
     },
     {
       label: '',
       pages: [
-        { file: 'tipografia-lateralita.html', num: '·', title: 'Tipografia · Lateralità' },
+        { file: 'tipografia-lateralita.html', title: 'Tipografia · Lateralità' },
       ]
     },
   ];
@@ -60,7 +60,7 @@
   const pages = groups.flatMap(g => g.pages);
 
   const path = location.pathname;
-  const idx = pages.findIndex(p => path.endsWith(p.file.replaceAll('/', '/')));
+  const idx = pages.findIndex(p => path.endsWith(p.file));
   const cur = idx >= 0 ? pages[idx] : null;
 
   function relHref(targetFile) {
@@ -88,7 +88,6 @@
       const isCur = cur && p.file === cur.file;
       listHTML +=
         `<li${isCur ? ' class="gnav-cur"' : ''}><a href="${relHref(p.file)}">` +
-        `<span class="gnav-num">${p.num}</span>` +
         `<span class="gnav-title">${p.title}</span></a></li>`;
     });
   });
