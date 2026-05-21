@@ -3,39 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Glifia — Tavola XI — Indefiniti di quantità</title>
+<link rel="stylesheet" href="glifia.css">
 <style>
-  body {
-    font-family: Georgia, serif;
-    background: #f4ede0;
-    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
-    background-size: 4px 4px;
-    padding: 2rem;
-    color: #000;
-    line-height: 1.6;
-  }
-  .header { text-align: center; font-size: 0.7rem; letter-spacing: 0.5em; font-style: italic; padding-bottom: 1rem; border-bottom: 0.5px solid #000; }
-  .tavola-num { text-align: center; font-size: 0.75rem; letter-spacing: 0.5em; opacity: 0.7; margin-top: 2rem; }
-  .tavola-title { text-align: center; font-size: clamp(1.5rem, 4vw, 2.4rem); letter-spacing: 0.1em; margin: 0.5rem 0; }
-  .tavola-subtitle { text-align: center; font-size: 0.9rem; font-style: italic; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
-  .rule-short { width: 100px; height: 1px; background: #000; opacity: 0.5; margin: 0 auto 2rem; }
-  .principle { text-align: center; font-style: italic; font-size: 1.05rem; line-height: 1.7; max-width: 580px; margin: 0 auto 2.5rem; }
-  .section-label { font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin: 2.5rem 0 0.5rem; }
-  .section-divider { border: none; border-top: 1px solid #000; margin: 0 0 1rem; }
-  .section-text { font-size: 0.92rem; line-height: 1.7; max-width: 640px; margin-bottom: 1.5rem; }
-  .glyphs-row { display: flex; gap: 1.2rem; flex-wrap: wrap; margin: 1.5rem 0; align-items: flex-start; }
-  .glyph-item { text-align: center; flex: 0 0 auto; }
-  .glyph-item svg { display: block; margin: 0 auto; }
-  .glyph-item .gname { font-style: italic; font-size: 0.88rem; margin-top: 0.5rem; }
-  .glyph-item .glabel { font-size: 0.6rem; letter-spacing: 0.08em; opacity: 0.6; margin-top: 0.15rem; }
+  .tavola-title { font-size: clamp(1.5rem, 4vw, 2.4rem); }
+  .glyphs-row { gap: 1.2rem; }
+  .glyph-item .gname { font-size: 0.88rem; }
+  .glyph-item .glabel { font-size: 0.6rem; letter-spacing: 0.08em; }
   .containers-row { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0; align-items: flex-start; }
   .container-example { text-align: center; flex: 0 0 auto; }
   .container-example svg { display: block; margin: 0 auto; }
   .container-example .cname { font-style: italic; font-size: 0.9rem; margin-top: 0.5rem; }
   .container-example .clabel { font-size: 0.62rem; letter-spacing: 0.1em; opacity: 0.6; margin-top: 0.15rem; }
-  .closing-rule { border: none; border-top: 1px solid #000; margin: 2.5rem 0 1.5rem; }
-  .closing-label { text-align: center; font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin-bottom: 1rem; }
-  .closing-text { text-align: center; font-style: italic; font-size: 0.92rem; line-height: 1.9; max-width: 620px; margin: 0 auto; }
-  @media (max-width: 500px) { body { padding: 1rem; } .glyphs-row { gap: 0.7rem; } .containers-row { gap: 1rem; } }
+  .closing-text { line-height: 1.9; }
+  @media (max-width: 500px) {
+    .glyphs-row { gap: 0.7rem; }
+    .containers-row { gap: 1rem; }
+  }
 </style>
 </head>
 <body>

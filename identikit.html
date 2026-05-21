@@ -3,110 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Glifia — Identikit del progetto</title>
+<link rel="stylesheet" href="glifia.css">
 <style>
-  body {
-    font-family: Georgia, serif;
-    background: #f4ede0;
-    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
-    background-size: 4px 4px;
-    padding: 2rem;
-    color: #000;
-    line-height: 1.5;
-  }
-  .header {
-    text-align: center;
-    font-size: 0.7rem;
-    letter-spacing: 0.5em;
-    font-style: italic;
-    padding-bottom: 1rem;
-    border-bottom: 0.5px solid #000;
-  }
-  .title {
-    font-size: clamp(4rem, 14vw, 8rem);
-    text-align: center;
-    letter-spacing: 0.1em;
-    margin: 3rem 0 1rem;
-    line-height: 1;
-  }
-  .subtitle {
-    text-align: center;
-    font-size: 0.95rem;
-    letter-spacing: 0.4em;
-    font-style: italic;
-  }
-  .ornament {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
+  body { line-height: 1.5; }
+  .section-label { text-align: center; letter-spacing: 0.5em; margin: 3rem 0 1.5rem; }
+  .principle { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+  .title { font-size: clamp(4rem, 14vw, 8rem); text-align: center; letter-spacing: 0.1em; margin: 3rem 0 1rem; line-height: 1; }
+  .subtitle { text-align: center; font-size: 0.95rem; letter-spacing: 0.4em; font-style: italic; }
+  .ornament { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; }
   .ornament svg { width: 28px; height: 28px; }
-  .ornament-rule {
-    width: 180px;
-    height: 1px;
-    background: #000;
-    opacity: 0.6;
-    margin: 0 auto;
-  }
-  .section-label {
-    text-align: center;
-    font-size: 0.7rem;
-    letter-spacing: 0.5em;
-    opacity: 0.7;
-    margin: 3rem 0 1.5rem;
-  }
-  .principle {
-    text-align: center;
-    font-style: italic;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .table-divider {
-    border: none;
-    border-top: 1px solid #000;
-    margin: 1rem 0;
-  }
+  .ornament-rule { width: 180px; height: 1px; background: #000; opacity: 0.6; margin: 0 auto; }
+  .table-divider { border: none; border-top: 1px solid #000; margin: 1rem 0; }
   .forms-table { width: 100%; border-collapse: collapse; }
-  .forms-table td {
-    padding: 1.3rem 0.5rem;
-    border-bottom: 0.5px solid rgba(0,0,0,0.4);
-    vertical-align: middle;
-  }
+  .forms-table td { padding: 1.3rem 0.5rem; border-bottom: 0.5px solid rgba(0,0,0,0.4); vertical-align: middle; }
   .forms-table tr:last-child td { border-bottom: none; }
   .forms-table .glyph-cell { width: 110px; text-align: center; }
-  .forms-table .glyph-cell svg {
-    width: 58px;
-    height: 58px;
-    display: block;
-    margin: 0 auto;
-  }
+  .forms-table .glyph-cell svg { width: 58px; height: 58px; display: block; margin: 0 auto; }
   .name { font-style: italic; font-size: 1.15rem; }
-  .description {
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    opacity: 0.6;
-    margin-top: 0.2rem;
-  }
-
+  .description { font-size: 0.78rem; letter-spacing: 0.1em; opacity: 0.6; margin-top: 0.2rem; }
   .footer-notes { text-align: center; margin-top: 2rem; }
-  .markers-line {
-    font-size: 0.72rem;
-    letter-spacing: 0.3em;
-    opacity: 0.65;
-    margin-bottom: 1rem;
-  }
-  .rule {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    font-style: italic;
-    opacity: 0.55;
-    margin: 0.4rem 0;
-  }
-
+  .markers-line { font-size: 0.72rem; letter-spacing: 0.3em; opacity: 0.65; margin-bottom: 1rem; }
+  .rule { font-size: 0.7rem; letter-spacing: 0.2em; font-style: italic; opacity: 0.55; margin: 0.4rem 0; }
   @media (max-width: 500px) {
-    body { padding: 1rem; }
     .header { letter-spacing: 0.3em; font-size: 0.65rem; }
     .subtitle { letter-spacing: 0.25em; font-size: 0.8rem; }
     .ornament { gap: 1rem; }

@@ -3,51 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Glifia — Tavola II — I marcatori</title>
+<link rel="stylesheet" href="glifia.css">
 <style>
-  body {
-    font-family: Georgia, serif;
-    background: #f4ede0;
-    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
-    background-size: 4px 4px;
-    padding: 2rem;
-    color: #000;
-    line-height: 1.5;
-  }
-  .header {
-    text-align: center;
-    font-size: 0.7rem;
-    letter-spacing: 0.5em;
-    font-style: italic;
-    padding-bottom: 1rem;
-    border-bottom: 0.5px solid #000;
-  }
-  .tavola-num { text-align: center; font-size: 0.75rem; letter-spacing: 0.5em; opacity: 0.7; margin-top: 2rem; }
-  .tavola-title { text-align: center; font-size: clamp(2rem, 6vw, 3rem); letter-spacing: 0.15em; margin: 0.5rem 0; }
-  .tavola-subtitle { text-align: center; font-size: 0.9rem; font-style: italic; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
-  .rule-short { width: 100px; height: 1px; background: #000; opacity: 0.5; margin: 0 auto 2rem; }
-  .principle { text-align: center; font-style: italic; font-size: 1.05rem; line-height: 1.7; max-width: 580px; margin: 2rem auto; }
-  .section-label { font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin: 2.5rem 0 0.5rem; }
-  .section-divider { border: none; border-top: 1px solid #000; margin: 0 0 1rem; }
+  body { line-height: 1.5; }
+  .tavola-title { font-size: clamp(2rem, 6vw, 3rem); letter-spacing: 0.15em; }
+  .principle { margin: 2rem auto; }
   .section-intro { font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; }
-  .examples {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
-  }
+  .examples { display: flex; justify-content: space-around; align-items: center; gap: 1rem; margin: 2rem 0; flex-wrap: wrap; }
   .example { text-align: center; flex: 0 0 auto; }
   .example svg { width: 130px; height: 170px; display: block; margin: 0 auto; }
   .example-label { font-style: italic; font-size: 1rem; margin-top: 0.5rem; }
   .example-caption { font-size: 0.72rem; letter-spacing: 0.1em; opacity: 0.6; margin-top: 0.2rem; }
   .arrow { font-size: 1.4rem; color: #000; opacity: 0.6; flex: 0 0 auto; text-align: center; }
   .arrow-label { font-size: 0.65rem; letter-spacing: 0.2em; font-style: italic; opacity: 0.5; margin-top: 0.4rem; }
-  .closing-rule { border: none; border-top: 1px solid #000; margin: 2.5rem 0 1.5rem; }
-  .closing-label { text-align: center; font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin-bottom: 1rem; }
-  .closing-text { text-align: center; font-style: italic; font-size: 0.95rem; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+  .closing-text { font-size: 0.95rem; max-width: 600px; }
   @media (max-width: 500px) {
-    body { padding: 1rem; }
     .examples { flex-direction: column; gap: 1.5rem; }
     .example svg { width: 110px; height: 145px; }
     .arrow { transform: rotate(90deg); }
