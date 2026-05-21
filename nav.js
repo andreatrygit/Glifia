@@ -3,7 +3,7 @@
     {
       label: '',
       pages: [
-        { file: 'identikit.html',             title: 'Identikit' },
+        { file: 'index.html',                  title: 'Identikit' },
         { file: 'tipografia-lateralita.html',  title: 'Tipografia · Lateralità' },
       ]
     },
