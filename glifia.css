@@ -1,3 +1,4 @@
+html { font-size: 20px; }
 body {
   font-family: Georgia, serif;
   background: #f4ede0;
@@ -93,6 +94,8 @@ body {
 .glyph-item svg {
   display: block;
   margin: 0 auto;
+  width: 125px;
+  height: auto;
 }
 .glyph-item .gname {
   font-style: italic;
@@ -167,6 +170,8 @@ body {
   margin: 0 auto;
 }
 @media (max-width: 500px) {
+  html { font-size: 16px; }
   body { padding: 1rem; }
   .header { letter-spacing: 0.25em; font-size: 0.6rem; }
+  .glyph-item svg { width: 90px; }
 }
