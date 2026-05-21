@@ -3,7 +3,8 @@
     {
       label: '',
       pages: [
-        { file: 'identikit.html', title: 'Identikit' },
+        { file: 'identikit.html',             title: 'Identikit' },
+        { file: 'tipografia-lateralita.html',  title: 'Tipografia · Lateralità' },
       ]
     },
     {
@@ -47,12 +48,6 @@
         { file: 'frasi/cane-mangiato.html',      title: 'Il mio cane' },
         { file: 'frasi/tuoi-bambini.html',       title: 'I tuoi bambini' },
         { file: 'frasi/bambino-marco.html',      title: 'Il bambino di Marco' },
-      ]
-    },
-    {
-      label: '',
-      pages: [
-        { file: 'tipografia-lateralita.html', title: 'Tipografia · Lateralità' },
       ]
     },
   ];
