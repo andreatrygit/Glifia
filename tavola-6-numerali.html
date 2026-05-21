@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Glifia — Tavola — I numerali</title>
+<style>
+  body {
+    font-family: Georgia, serif;
+    background: #f4ede0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
+    background-size: 4px 4px;
+    padding: 2rem;
+    color: #000;
+    line-height: 1.6;
+  }
+  .header {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    font-style: italic;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid #000;
+  }
+  .tavola-num {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.5em;
+    opacity: 0.7;
+    margin-top: 2rem;
+  }
+  .tavola-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    letter-spacing: 0.1em;
+    margin: 0.5rem 0;
+  }
+  .tavola-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+  }
+  .rule-short {
+    width: 100px;
+    height: 1px;
+    background: #000;
+    opacity: 0.5;
+    margin: 0 auto 2rem;
+  }
+  .principle {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+  }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    opacity: 0.7;
+    margin: 2.5rem 0 0.5rem;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 0 0 1rem;
+  }
+  .section-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* griglia glifi */
+  .glyphs-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+    align-items: flex-start;
+  }
+  .glyph-item {
+    text-align: center;
+    flex: 0 0 auto;
+  }
+  .glyph-item svg {
+    display: block;
+    margin: 0 auto;
+  }
+  .glyph-item .gname {
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  .glyph-item .glabel {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-top: 0.2rem;
+  }
+
+  /* tabella regole */
+  .rules-table {
+    width: 100%;
+    max-width: 640px;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+  }
+  .rules-table td {
+    padding: 0.8rem 0.5rem;
+    border-bottom: 0.5px solid rgba(0,0,0,0.3);
+    vertical-align: middle;
+  }
+  .rules-table tr:last-child td { border-bottom: none; }
+  .rules-table .col-tipo { font-style: italic; width: 30%; }
+  .rules-table .col-segno { font-size: 1.1rem; width: 20%; text-align: center; }
+  .rules-table .col-pos { width: 25%; opacity: 0.7; font-size: 0.82rem; }
+  .rules-table .col-esempio { width: 25%; opacity: 0.7; font-size: 0.82rem; }
+
+  .note-box {
+    background: rgba(0,0,0,0.04);
+    border-left: 2px solid rgba(0,0,0,0.3);
+    padding: 0.8rem 1.2rem;
+    font-size: 0.88rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    max-width: 640px;
+  }
+
+  .closing-rule {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 2.5rem 0 1.5rem;
+  }
+  .closing-label {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
+  .closing-text {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 500px) {
+    body { padding: 1rem; }
+    .header { letter-spacing: 0.25em; font-size: 0.6rem; }
+    .glyphs-row { gap: 1rem; }
+    .section-text { font-size: 0.88rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">GLIFIA · MANUALE · EDIZIONE I</div>
+
+  <div class="tavola-num">TAVOLA VI</div>
+  <h1 class="tavola-title">I NUMERALI</h1>
+  <div class="tavola-subtitle">cardinali · ordinali · moltiplicatori</div>
+  <div class="rule-short"></div>
+
+  <div class="principle">
+    Il numerale non ha un contenitore proprio.<br>
+    Eredita quello della funzione che svolge nella frase:<br>
+    aggettivo quando modifica, pronome quando sostituisce.
+  </div>
+
+  <!-- ============= REGOLE ============= -->
+  <div class="section-label">§ 1 · LE TRE FORME</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    La cifra è il glifo. Il tipo di numerale si indica con un segno diacritico in alto nel lato <em>dopo</em> — a destra in LTR, a sinistra in RTL.
+  </div>
+
+  <table class="rules-table">
+    <tr>
+      <td class="col-tipo">cardinale</td>
+      <td class="col-segno">3</td>
+      <td class="col-pos">cifra nuda</td>
+      <td class="col-esempio">tre, venti, cento</td>
+    </tr>
+    <tr>
+      <td class="col-tipo">ordinale</td>
+      <td class="col-segno">3°</td>
+      <td class="col-pos">° in alto nel «dopo»</td>
+      <td class="col-esempio">terzo, ventesimo</td>
+    </tr>
+    <tr>
+      <td class="col-tipo">moltiplicatore</td>
+      <td class="col-segno">3+</td>
+      <td class="col-pos">+ in alto nel «dopo»</td>
+      <td class="col-esempio">triplo, tre volte</td>
+    </tr>
+  </table>
+
+  <!-- ============= § 2 CARDINALI ============= -->
+  <div class="section-label">§ 2 · CARDINALI — dentro l'aggettivo</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    Quando il numerale cardinale modifica un sostantivo (<em>tre case, venti bambini</em>) sta dentro il contenitore dell'aggettivo — quadrato aperto verso il «prima».
+  </div>
+
+  <div class="glyphs-row">
+
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <!-- quadrato aperto a sinistra (aggettivo) -->
+        <path d="M 10 10 L 80 10 L 80 80 L 10 80" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- cifra 1 -->
+        <text x="45" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#000">1</text>
+      </svg>
+      <div class="gname">una</div>
+      <div class="glabel">cardinale · agg.</div>
+    </div>
+
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <path d="M 10 10 L 80 10 L 80 80 L 10 80" fill="none" stroke="#000" stroke-width="2.5"/>
+        <text x="45" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#000">3</text>
+      </svg>
+      <div class="gname">tre</div>
+      <div class="glabel">cardinale · agg.</div>
+    </div>
+
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <path d="M 10 10 L 80 10 L 80 80 L 10 80" fill="none" stroke="#000" stroke-width="2.5"/>
+        <text x="45" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#000">20</text>
+      </svg>
+      <div class="gname">venti</div>
+      <div class="glabel">cardinale · agg.</div>
+    </div>
+
+  </div>
+
+  <!-- ============= § 3 ORDINALI ============= -->
+  <div class="section-label">§ 3 · ORDINALI — con il °</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    L'ordinale aggiunge un ° in alto nel lato «dopo» (destra in LTR). Può stare nel contenitore aggettivo (<em>il terzo piano</em>) o pronome (<em>il terzo</em>).
+  </div>
+
+  <div class="glyphs-row">
+
+    <!-- ordinale come aggettivo -->
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <path d="M 10 10 L 80 10 L 80 80 L 10 80" fill="none" stroke="#000" stroke-width="2.5"/>
+        <text x="40" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#000">2</text>
+        <text x="66" y="26" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#000">°</text>
+      </svg>
+      <div class="gname">secondo</div>
+      <div class="glabel">ordinale · agg.</div>
+    </div>
+
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <path d="M 10 10 L 80 10 L 80 80 L 10 80" fill="none" stroke="#000" stroke-width="2.5"/>
+        <text x="40" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#000">5</text>
+        <text x="66" y="26" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#000">°</text>
+      </svg>
+      <div class="gname">quinto</div>
+      <div class="glabel">ordinale · agg.</div>
+    </div>
+
+    <!-- ordinale come pronome -->
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <!-- quadrato aperto in alto (pronome) -->
+        <path d="M 10 10 L 10 80 L 80 80 L 80 10" fill="none" stroke="#000" stroke-width="2.5"/>
+        <text x="40" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#000">1</text>
+        <text x="66" y="26" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#000">°</text>
+      </svg>
+      <div class="gname">il primo</div>
+      <div class="glabel">ordinale · pron.</div>
+    </div>
+
+  </div>
+
+  <!-- ============= § 4 MOLTIPLICATORI ============= -->
+  <div class="section-label">§ 4 · MOLTIPLICATORI — con il +</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    Il moltiplicatore aggiunge un + in alto nel lato «dopo». Di solito funziona come pronome (<em>il doppio, il triplo</em>) ma può anche essere aggettivo (<em>doppia razione</em>).
+  </div>
+
+  <div class="glyphs-row">
+
+    <!-- doppio come pronome -->
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <path d="M 10 10 L 10 80 L 80 80 L 80 10" fill="none" stroke="#000" stroke-width="2.5"/>
+        <text x="40" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#000">2</text>
+        <text x="66" y="24" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#000" font-weight="bold">+</text>
+      </svg>
+      <div class="gname">il doppio</div>
+      <div class="glabel">moltiplicatore · pron.</div>
+    </div>
+
+    <!-- triplo come pronome -->
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <path d="M 10 10 L 10 80 L 80 80 L 80 10" fill="none" stroke="#000" stroke-width="2.5"/>
+        <text x="40" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#000">3</text>
+        <text x="66" y="24" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#000" font-weight="bold">+</text>
+      </svg>
+      <div class="gname">il triplo</div>
+      <div class="glabel">moltiplicatore · pron.</div>
+    </div>
+
+    <!-- doppio come aggettivo -->
+    <div class="glyph-item">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <path d="M 10 10 L 80 10 L 80 80 L 10 80" fill="none" stroke="#000" stroke-width="2.5"/>
+        <text x="40" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#000">2</text>
+        <text x="66" y="24" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#000" font-weight="bold">+</text>
+      </svg>
+      <div class="gname">doppio</div>
+      <div class="glabel">moltiplicatore · agg.</div>
+    </div>
+
+  </div>
+
+  <div class="note-box">
+    In RTL il diacritico (° o +) si sposta nel lato «dopo» della scrittura, cioè in alto a sinistra. Il contenitore si adatta normalmente alle regole di lateralità già stabilite.
+  </div>
+
+  <!-- ============= CHIUSURA ============= -->
+  <hr class="closing-rule">
+  <div class="closing-label">PRINCIPIO</div>
+  <div class="closing-text">
+    La cifra è universale — non ha lingua.<br>
+    Il contenitore dice la funzione.<br>
+    Il diacritico in alto dice il tipo.
+  </div>
+
+</body>
+</html>

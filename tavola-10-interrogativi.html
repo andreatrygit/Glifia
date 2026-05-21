@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Glifia — Tavola X — Pronomi interrogativi ed esclamativi</title>
+<style>
+  body {
+    font-family: Georgia, serif;
+    background: #f4ede0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
+    background-size: 4px 4px;
+    padding: 2rem;
+    color: #000;
+    line-height: 1.6;
+  }
+  .header { text-align: center; font-size: 0.7rem; letter-spacing: 0.5em; font-style: italic; padding-bottom: 1rem; border-bottom: 0.5px solid #000; }
+  .tavola-num { text-align: center; font-size: 0.75rem; letter-spacing: 0.5em; opacity: 0.7; margin-top: 2rem; }
+  .tavola-title { text-align: center; font-size: clamp(1.8rem, 5vw, 2.8rem); letter-spacing: 0.1em; margin: 0.5rem 0; }
+  .tavola-subtitle { text-align: center; font-size: 0.9rem; font-style: italic; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
+  .rule-short { width: 100px; height: 1px; background: #000; opacity: 0.5; margin: 0 auto 2rem; }
+  .principle { text-align: center; font-style: italic; font-size: 1.05rem; line-height: 1.7; max-width: 580px; margin: 0 auto 2.5rem; }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin: 2.5rem 0 0.5rem; }
+  .section-divider { border: none; border-top: 1px solid #000; margin: 0 0 1rem; }
+  .glyphs-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1.5rem 0; align-items: flex-start; }
+  .glyph-item { text-align: center; flex: 0 0 auto; }
+  .glyph-item svg { display: block; margin: 0 auto; }
+  .glyph-item .gname { font-style: italic; font-size: 0.95rem; margin-top: 0.5rem; }
+  .glyph-item .glabel { font-size: 0.65rem; letter-spacing: 0.1em; opacity: 0.6; margin-top: 0.15rem; }
+  .closing-rule { border: none; border-top: 1px solid #000; margin: 2.5rem 0 1.5rem; }
+  .closing-label { text-align: center; font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin-bottom: 1rem; }
+  .closing-text { text-align: center; font-style: italic; font-size: 0.92rem; line-height: 1.9; max-width: 620px; margin: 0 auto; }
+  @media (max-width: 500px) { body { padding: 1rem; } .glyphs-row { gap: 1rem; } }
+</style>
+</head>
+<body>
+
+  <!--
+    viewBox 0 0 110 110
+    Contenitore: y=8→102, centro y=55
+    Zona 70%: altezza=66px, y=22→88, centro y=55
+    Diacritico cx=30 (metà sx), pittogramma cx=74 (metà dx)
+
+    DIACRITICI centrati a y=55, h=66px (y=22→88):
+    ! linea y=22→76, punto y=84  → centro visivo ≈ (22+84)/2 = 53 ≈ 55 ✓
+    ? arco top=22, punto y=84    → centro visivo ≈ (22+84)/2 = 53 ≈ 55 ✓
+
+    PITTOGRAMMI centrati a cy=55:
+    omino:      testa cy=28, gambe y=78  → span=50, centro=53 → shift +2
+    quadrato:   36×36, y=37→73          → centro y=55 ✓
+    biforcazione: top y=24, base y=86   → centro y=55 ✓
+    onda:       y=48→62                 → centro y=55 ✓
+  -->
+
+  <div class="header">GLIFIA · MANUALE · EDIZIONE I</div>
+  <div class="tavola-num">TAVOLA X</div>
+  <h1 class="tavola-title">PRONOMI INTERROGATIVI ED ESCLAMATIVI</h1>
+  <div class="tavola-subtitle">quattro forme · due funzioni · diacritico nel «prima» interno</div>
+  <div class="rule-short"></div>
+
+  <div class="principle">
+    Contenitore: quadrato aperto in alto.<br>
+    Diacritico e pittogramma: stessa altezza, centro verticale identico,<br>
+    affiancati orizzontalmente nel «prima» e nel «dopo».
+  </div>
+
+  <!-- § 1 INTERROGATIVI -->
+  <div class="section-label">§ 1 · INTERROGATIVI</div>
+  <hr class="section-divider">
+
+  <div class="glyphs-row">
+
+    <!-- chi? -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- ? cx=30, top y=22, punto y=84, centro~55 -->
+        <path d="M 20 36 Q 20 22 30 22 Q 40 22 40 33 Q 40 44 30 48 L 30 68" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="30" cy="77" r="3" fill="#000"/>
+        <!-- omino cx=74, testa cy=30, gambe y=80, span=50, centro=55 -->
+        <circle cx="74" cy="30" r="12" fill="none" stroke="#000" stroke-width="2"/>
+        <line x1="74" y1="42" x2="74" y2="63" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="74" y1="49" x2="63" y2="57" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="74" y1="49" x2="85" y2="57" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="74" y1="63" x2="66" y2="80" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="74" y1="63" x2="82" y2="80" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">chi?</div>
+      <div class="glabel">interrogativo persona</div>
+    </div>
+
+    <!-- che/cosa? -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <path d="M 20 36 Q 20 22 30 22 Q 40 22 40 33 Q 40 44 30 48 L 30 68" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="30" cy="77" r="3" fill="#000"/>
+        <!-- quadrato vuoto 36×36, y=37→73, centro y=55, cx=74 -->
+        <rect x="56" y="37" width="36" height="36" fill="none" stroke="#000" stroke-width="2.5"/>
+      </svg>
+      <div class="gname">che? / cosa?</div>
+      <div class="glabel">interrogativo cosa</div>
+    </div>
+
+    <!-- quale? -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <path d="M 20 36 Q 20 22 30 22 Q 40 22 40 33 Q 40 44 30 48 L 30 68" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="30" cy="77" r="3" fill="#000"/>
+        <!-- biforcazione: base y=86, nodo y=62, punte y=24, cx=74 -->
+        <line x1="74" y1="86" x2="74" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="62" x2="60" y2="28" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="62" x2="88" y2="28" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="60" cy="25" r="3.5" fill="#000"/>
+        <circle cx="88" cy="25" r="3.5" fill="#000"/>
+      </svg>
+      <div class="gname">quale?</div>
+      <div class="glabel">interrogativo scelta</div>
+    </div>
+
+    <!-- quanto? -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <path d="M 20 36 Q 20 22 30 22 Q 40 22 40 33 Q 40 44 30 48 L 30 68" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="30" cy="77" r="3" fill="#000"/>
+        <!-- onda centrata y=55, da x=54 a x=102 -->
+        <path d="M 54 55 Q 62 42 70 55 Q 78 68 86 55 Q 94 42 102 55" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">quanto?</div>
+      <div class="glabel">interrogativo quantità</div>
+    </div>
+
+  </div>
+
+  <!-- § 2 ESCLAMATIVI -->
+  <div class="section-label">§ 2 · ESCLAMATIVI</div>
+  <hr class="section-divider">
+
+  <div class="glyphs-row">
+
+    <!-- chi! -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- ! cx=30, linea y=22→68, punto y=77, centro~(22+77)/2=49→aggiusto a y=22→72, punto y=82 -->
+        <line x1="30" y1="22" x2="30" y2="70" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="30" cy="79" r="3" fill="#000"/>
+        <circle cx="74" cy="30" r="12" fill="none" stroke="#000" stroke-width="2"/>
+        <line x1="74" y1="42" x2="74" y2="63" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="74" y1="49" x2="63" y2="57" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="74" y1="49" x2="85" y2="57" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="74" y1="63" x2="66" y2="80" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="74" y1="63" x2="82" y2="80" stroke="#000" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">chi!</div>
+      <div class="glabel">esclamativo persona</div>
+    </div>
+
+    <!-- che/cosa! -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="30" y1="22" x2="30" y2="70" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="30" cy="79" r="3" fill="#000"/>
+        <rect x="56" y="37" width="36" height="36" fill="none" stroke="#000" stroke-width="2.5"/>
+      </svg>
+      <div class="gname">che! / cosa!</div>
+      <div class="glabel">esclamativo cosa</div>
+    </div>
+
+    <!-- quale! -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="30" y1="22" x2="30" y2="70" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="30" cy="79" r="3" fill="#000"/>
+        <line x1="74" y1="86" x2="74" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="62" x2="60" y2="28" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="62" x2="88" y2="28" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="60" cy="25" r="3.5" fill="#000"/>
+        <circle cx="88" cy="25" r="3.5" fill="#000"/>
+      </svg>
+      <div class="gname">quale!</div>
+      <div class="glabel">esclamativo scelta</div>
+    </div>
+
+    <!-- quanto! -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="30" y1="22" x2="30" y2="70" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="30" cy="79" r="3" fill="#000"/>
+        <path d="M 54 55 Q 62 42 70 55 Q 78 68 86 55 Q 94 42 102 55" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">quanto!</div>
+      <div class="glabel">esclamativo quantità</div>
+    </div>
+
+  </div>
+
+  <!-- CHIUSURA -->
+  <hr class="closing-rule">
+  <div class="closing-label">PRINCIPIO</div>
+  <div class="closing-text">
+    Diacritico e pittogramma: stessa altezza, stesso centro verticale, affiancati.<br>
+    ? interrogativo · ! esclamativo.<br>
+    In RTL il diacritico si sposta nel «prima» della direzione di lettura.
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Glifia — Tavola XI — Indefiniti di quantità</title>
+<style>
+  body {
+    font-family: Georgia, serif;
+    background: #f4ede0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
+    background-size: 4px 4px;
+    padding: 2rem;
+    color: #000;
+    line-height: 1.6;
+  }
+  .header { text-align: center; font-size: 0.7rem; letter-spacing: 0.5em; font-style: italic; padding-bottom: 1rem; border-bottom: 0.5px solid #000; }
+  .tavola-num { text-align: center; font-size: 0.75rem; letter-spacing: 0.5em; opacity: 0.7; margin-top: 2rem; }
+  .tavola-title { text-align: center; font-size: clamp(1.5rem, 4vw, 2.4rem); letter-spacing: 0.1em; margin: 0.5rem 0; }
+  .tavola-subtitle { text-align: center; font-size: 0.9rem; font-style: italic; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
+  .rule-short { width: 100px; height: 1px; background: #000; opacity: 0.5; margin: 0 auto 2rem; }
+  .principle { text-align: center; font-style: italic; font-size: 1.05rem; line-height: 1.7; max-width: 580px; margin: 0 auto 2.5rem; }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin: 2.5rem 0 0.5rem; }
+  .section-divider { border: none; border-top: 1px solid #000; margin: 0 0 1rem; }
+  .section-text { font-size: 0.92rem; line-height: 1.7; max-width: 640px; margin-bottom: 1.5rem; }
+  .glyphs-row { display: flex; gap: 1.2rem; flex-wrap: wrap; margin: 1.5rem 0; align-items: flex-start; }
+  .glyph-item { text-align: center; flex: 0 0 auto; }
+  .glyph-item svg { display: block; margin: 0 auto; }
+  .glyph-item .gname { font-style: italic; font-size: 0.88rem; margin-top: 0.5rem; }
+  .glyph-item .glabel { font-size: 0.6rem; letter-spacing: 0.08em; opacity: 0.6; margin-top: 0.15rem; }
+  .containers-row { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0; align-items: flex-start; }
+  .container-example { text-align: center; flex: 0 0 auto; }
+  .container-example svg { display: block; margin: 0 auto; }
+  .container-example .cname { font-style: italic; font-size: 0.9rem; margin-top: 0.5rem; }
+  .container-example .clabel { font-size: 0.62rem; letter-spacing: 0.1em; opacity: 0.6; margin-top: 0.15rem; }
+  .closing-rule { border: none; border-top: 1px solid #000; margin: 2.5rem 0 1.5rem; }
+  .closing-label { text-align: center; font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin-bottom: 1rem; }
+  .closing-text { text-align: center; font-style: italic; font-size: 0.92rem; line-height: 1.9; max-width: 620px; margin: 0 auto; }
+  @media (max-width: 500px) { body { padding: 1rem; } .glyphs-row { gap: 0.7rem; } .containers-row { gap: 1rem; } }
+</style>
+</head>
+<body>
+
+  <!--
+    GEOMETRIA: viewBox 0 0 110 110
+    Contenitore pronome: aperto in alto, x=8 y=8 → x=102 y=102
+    Barra: y=55, da x=28 a x=82 (i riferimenti fissi sono min/centro/max)
+
+    Riferimenti fissi (vuoti) — 3 knob:
+      min:    x=28  (pos 0)
+      centro: x=55  (pos 2)
+      max:    x=82  (pos 4 della barra, non fuori)
+
+    Posizioni del knob valore:
+      -1 (troppo poco):  x=14  fuori sinistra
+       0 (poco):         x=28  sul min
+       1 (abbastanza):   x=41  tra min e centro
+       2 (giusto):       x=55  sul centro
+       3 (molto/tanto):  x=69  tra centro e max
+       4 (troppo):       x=96  fuori destra
+
+    Certa quantità: knob tratteggiato a x=41 (pos 1, indicativo)
+  -->
+
+  <div class="header">GLIFIA · MANUALE · EDIZIONE I</div>
+  <div class="tavola-num">TAVOLA XI</div>
+  <h1 class="tavola-title">INDEFINITI DI QUANTITÀ</h1>
+  <div class="tavola-subtitle">pronome · aggettivo · avverbio — stesso glifo, contenitore diverso</div>
+  <div class="rule-short"></div>
+
+  <div class="principle">
+    Una barra con tre riferimenti fissi (min · giusto · max).<br>
+    Un knob pieno indica il valore sulla scala.<br>
+    Le posizioni fuori dalla barra indicano eccesso in entrambe le direzioni.<br>
+    Un knob tratteggiato indica una quantità volutamente indeterminata.
+  </div>
+
+  <!-- LEGENDA -->
+  <div class="section-label">LA SCALA</div>
+  <hr class="section-divider">
+
+  <div style="display:flex; justify-content:center; margin: 1rem 0 2rem;">
+    <svg width="360" height="70" viewBox="0 0 360 70">
+      <!-- barra -->
+      <line x1="80" y1="30" x2="280" y2="30" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <!-- 3 riferimenti fissi: min x=80, centro x=180, max x=280 -->
+      <circle cx="80" cy="30" r="8" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+      <circle cx="180" cy="30" r="8" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+      <circle cx="280" cy="30" r="8" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+      <!-- etichette riferimenti -->
+      <text x="80" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#000" opacity="0.7" font-style="italic">min</text>
+      <text x="180" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#000" opacity="0.7" font-style="italic">giusto</text>
+      <text x="280" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#000" opacity="0.7" font-style="italic">max</text>
+      <!-- posizioni intermedie -->
+      <text x="130" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#000" opacity="0.45" font-style="italic">abbastanza</text>
+      <text x="230" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#000" opacity="0.45" font-style="italic">molto</text>
+      <!-- fuori sinistra -->
+      <line x1="30" y1="20" x2="30" y2="40" stroke="#000" stroke-width="1.2" opacity="0.4"/>
+      <text x="30" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#000" opacity="0.5" font-style="italic">troppo poco</text>
+      <!-- fuori destra -->
+      <line x1="330" y1="20" x2="330" y2="40" stroke="#000" stroke-width="1.2" opacity="0.4"/>
+      <text x="330" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#000" opacity="0.5" font-style="italic">troppo</text>
+      <!-- knob esempio fuori -->
+      <circle cx="30" cy="30" r="6" fill="#000" opacity="0.3"/>
+      <circle cx="330" cy="30" r="6" fill="#000" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <!-- I VALORI -->
+  <div class="section-label">I VALORI — contenitore pronome</div>
+  <hr class="section-divider">
+
+  <div class="glyphs-row">
+
+    <!-- troppo poco: pos -1, fuori sinistra -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <!-- fuori sinistra -->
+        <circle cx="14" cy="55" r="6" fill="#000"/>
+      </svg>
+      <div class="gname">troppo poco</div>
+      <div class="glabel">fuori a sinistra</div>
+    </div>
+
+    <!-- niente/nulla/nessuno: nessun knob di valore, solo riferimenti vuoti -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+      </svg>
+      <div class="gname">niente / nulla / nessuno</div>
+      <div class="glabel">nessun valore · barra vuota</div>
+    </div>
+
+    <!-- abbastanza: pos 1, tra min e centro -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <!-- tra min e centro -->
+        <circle cx="41" cy="55" r="6" fill="#000"/>
+      </svg>
+      <div class="gname">abbastanza / poco</div>
+      <div class="glabel">tra min e giusto</div>
+    </div>
+
+    <!-- giusto: pos 2, centro -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <!-- sul centro -->
+        <circle cx="55" cy="55" r="6" fill="#000"/>
+      </svg>
+      <div class="gname">giusto</div>
+      <div class="glabel">pos. giusto · neutro ideale</div>
+    </div>
+
+    <!-- molto/tanto/parecchio: pos 3, tra centro e max -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <!-- tra centro e max -->
+        <circle cx="69" cy="55" r="6" fill="#000"/>
+      </svg>
+      <div class="gname">molto / tanto / parecchio</div>
+      <div class="glabel">tra giusto e max</div>
+    </div>
+
+    <!-- troppo: fuori destra -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <!-- fuori destra -->
+        <circle cx="96" cy="55" r="6" fill="#000"/>
+      </svg>
+      <div class="gname">troppo</div>
+      <div class="glabel">fuori a destra</div>
+    </div>
+
+    <!-- certa quantità: knob tratteggiato -->
+    <div class="glyph-item">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <!-- knob tratteggiato = indeterminatezza volontaria -->
+        <circle cx="41" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2" stroke-dasharray="3 2"/>
+      </svg>
+      <div class="gname">una certa quantità</div>
+      <div class="glabel">knob tratteggiato · posizione indicativa</div>
+    </div>
+
+  </div>
+
+  <!-- CONTENITORI -->
+  <div class="section-label">IL CONTENITORE CAMBIA LA FUNZIONE</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    Lo stesso glifo — qui <em>giusto</em> — cambia funzione secondo il contenitore.
+  </div>
+
+  <div class="containers-row">
+
+    <div class="container-example">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 8 102 L 102 102 L 102 8" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#000"/>
+      </svg>
+      <div class="cname">pronome</div>
+      <div class="clabel">«ne vuoi? il giusto»</div>
+    </div>
+
+    <div class="container-example">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 8 8 L 102 8 L 102 102 L 8 102" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#000"/>
+      </svg>
+      <div class="cname">aggettivo</div>
+      <div class="clabel">«la giusta quantità»</div>
+    </div>
+
+    <div class="container-example">
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <path d="M 55 8 A 47 47 0 0 1 55 102" fill="none" stroke="#000" stroke-width="2.5"/>
+        <line x1="28" y1="55" x2="82" y2="55" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="82" cy="55" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="55" cy="55" r="6" fill="#000"/>
+      </svg>
+      <div class="cname">avverbio</div>
+      <div class="clabel">«hai mangiato giusto»</div>
+    </div>
+
+  </div>
+
+  <!-- CHIUSURA -->
+  <hr class="closing-rule">
+  <div class="closing-label">NOTA SULLA LATERALITÀ</div>
+  <div class="closing-text">
+    In LTR la barra va da sinistra (meno) a destra (più).<br>
+    In RTL si specchia: destra è meno, sinistra è più.<br>
+    *Troppo poco* e *troppo* escono dalla barra in direzioni opposte<br>
+    in qualunque lingua ospite.
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Glifia — Tavola V — Lo zaino del bambino è caduto a terra</title>
+<style>
+  body {
+    font-family: Georgia, serif;
+    background: #f4ede0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
+    background-size: 4px 4px;
+    padding: 2rem;
+    color: #000;
+    line-height: 1.5;
+  }
+  .header {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    font-style: italic;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid #000;
+  }
+  .tavola-num {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.5em;
+    opacity: 0.7;
+    margin-top: 2rem;
+  }
+  .tavola-title {
+    text-align: center;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    letter-spacing: 0.08em;
+    margin: 0.5rem 0;
+  }
+  .tavola-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+  }
+  .rule-short {
+    width: 100px;
+    height: 1px;
+    background: #000;
+    opacity: 0.5;
+    margin: 0 auto 2rem;
+  }
+  .phrase-plain {
+    text-align: center;
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 2rem 0;
+  }
+
+  /* Frase in Glifia: due righe per non stingere su mobile */
+  .phrase-glifia {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  .word {
+    text-align: center;
+    flex: 0 0 auto;
+  }
+  /* sostantivi e verbo: blocco standard */
+  .word svg {
+    width: 120px;
+    height: 165px;
+    display: block;
+    margin: 0 auto;
+  }
+  /* preposizioni: più strette */
+  .word.prep svg {
+    width: 65px;
+    height: 165px;
+  }
+  .word-label {
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+  .word-caption {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    margin-top: 0.15rem;
+  }
+
+  .forma-muta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+  }
+  .fm-word {
+    width: 60px;
+    height: 72px;
+    display: block;
+  }
+  .fm-prep {
+    width: 32px;
+    height: 72px;
+    display: block;
+  }
+
+  .closing-rule {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 2.5rem 0 1.5rem;
+  }
+  .closing-label {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
+  .closing-text {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 520px) {
+    body { padding: 1rem; }
+    .header { letter-spacing: 0.25em; font-size: 0.6rem; }
+    .phrase-plain { font-size: 1.1rem; }
+    .word svg { width: 95px; height: 130px; }
+    .word.prep svg { width: 50px; height: 130px; }
+    .word-label { font-size: 0.82rem; }
+    .closing-text { font-size: 0.82rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">GLIFIA · MANUALE · EDIZIONE I</div>
+
+  <div class="tavola-num">TAVOLA V</div>
+  <h1 class="tavola-title">LO ZAINO DEL BAMBINO È CADUTO A TERRA</h1>
+  <div class="tavola-subtitle">frase con complemento di specificazione</div>
+  <div class="rule-short"></div>
+
+  <div class="phrase-plain">«Lo zaino del bambino è caduto a terra.»</div>
+
+  <div class="phrase-glifia">
+
+    <!-- 1. LO ZAINO: art. det. + sostantivo -->
+    <div class="word">
+      <svg viewBox="0 0 120 165">
+        <!-- articolo determinativo SOPRA -->
+        <line x1="10" y1="4" x2="110" y2="4" stroke="#000" stroke-width="4.5" stroke-linecap="square"/>
+        <!-- quadrato sostantivo -->
+        <rect x="10" y="14" width="100" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- maniglia in alto, dentro il quadrato -->
+        <path d="M 48 28 Q 60 20 72 28" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <!-- corpo zaino -->
+        <rect x="30" y="38" width="60" height="55" rx="4" fill="none" stroke="#000" stroke-width="2"/>
+        <!-- tasca frontale -->
+        <rect x="40" y="62" width="40" height="22" rx="2" fill="none" stroke="#000" stroke-width="1.4"/>
+        <!-- spallacci: dentro il quadrato, partono dal bordo superiore del corpo -->
+        <path d="M 36 38 Q 24 48 26 65" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <path d="M 84 38 Q 96 48 94 65" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <!-- articolo determinativo: linea singolare -->
+
+      </svg>
+      <div class="word-label">lo zaino</div>
+      <div class="word-caption">art. det. + sost.</div>
+    </div>
+
+    <!-- 2. DI (preposizione di specificazione) -->
+    <div class="word prep">
+      <svg viewBox="0 0 65 165">
+        <!-- glifo "di": curva a S, come in Tavola III -->
+        <path d="M 12 55 Q 35 55 35 82 Q 35 110 58 110" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="word-label">di</div>
+      <div class="word-caption">prep.</div>
+    </div>
+
+    <!-- 3. IL BAMBINO: art. det. + sostantivo -->
+    <div class="word">
+      <svg viewBox="0 0 120 165">
+        <!-- articolo determinativo SOPRA -->
+        <line x1="10" y1="4" x2="110" y2="4" stroke="#000" stroke-width="4.5" stroke-linecap="square"/>
+        <!-- quadrato sostantivo -->
+        <rect x="10" y="14" width="100" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- bambino stilizzato -->
+        <circle cx="60" cy="35" r="12" fill="none" stroke="#000" stroke-width="2"/>
+        <circle cx="56" cy="34" r="1.6" fill="#000"/>
+        <circle cx="64" cy="34" r="1.6" fill="#000"/>
+        <path d="M 56 40 Q 60 43 64 40" fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="60" y1="47" x2="60" y2="77" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="52" x2="45" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="52" x2="75" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="77" x2="50" y2="95" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="77" x2="70" y2="95" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- articolo determinativo: linea singolare -->
+
+      </svg>
+      <div class="word-label">il bambino</div>
+      <div class="word-caption">art. det. + sost.</div>
+    </div>
+
+    <!-- 4. È CADUTO: verbo -->
+    <div class="word">
+      <svg viewBox="0 0 120 165">
+        <!-- cerchio verbo -->
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- glifo cadere: freccia verso il basso con traiettoria curva -->
+        <path d="M 42 30 Q 75 30 72 60" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 4"/>
+        <polygon points="72,72 64,56 80,56" fill="#000"/>
+        <!-- impatto: piccole linee radiali in basso -->
+        <line x1="60" y1="85" x2="55" y2="95" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="85" x2="60" y2="96" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="85" x2="65" y2="95" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="word-label">è caduto</div>
+      <div class="word-caption">verbo</div>
+    </div>
+
+    <!-- 5. A (preposizione direzione/contatto) -->
+    <div class="word prep">
+      <svg viewBox="0 0 65 165">
+        <!-- glifo "a": freccia verso destra -->
+        <line x1="8" y1="82" x2="48" y2="82" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="57,82 43,75 43,89" fill="#000"/>
+      </svg>
+      <div class="word-label">a</div>
+      <div class="word-caption">prep.</div>
+    </div>
+
+    <!-- 6. TERRA: sostantivo nudo (senza articolo) -->
+    <div class="word">
+      <svg viewBox="0 0 120 165">
+        <!-- quadrato sostantivo -->
+        <rect x="10" y="10" width="100" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- glifo terra: linea orizzontale con piccole radici/onde sotto -->
+        <line x1="20" y1="60" x2="100" y2="60" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <!-- onde del terreno -->
+        <path d="M 20 72 Q 30 65 40 72 Q 50 79 60 72 Q 70 65 80 72 Q 90 79 100 72" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <!-- piccole radici -->
+        <line x1="35" y1="60" x2="30" y2="78" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="60" y1="60" x2="60" y2="80" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="85" y1="60" x2="90" y2="78" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- nessun marcatore = sostantivo nudo -->
+      </svg>
+      <div class="word-label">terra</div>
+      <div class="word-caption">sost. nudo</div>
+    </div>
+
+  </div>
+
+  <!-- ============= FORMA MUTA ============= -->
+  <hr class="closing-rule">
+  <div class="closing-label">FORMA MUTA</div>
+
+  <div class="forma-muta">
+
+    <!-- lo zaino -->
+    <svg viewBox="0 0 120 145" class="fm-word">
+      <line x1="10" y1="4" x2="110" y2="4" stroke="#000" stroke-width="4.5" stroke-linecap="square"/>
+      <rect x="10" y="14" width="100" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+      <path d="M 48 28 Q 60 20 72 28" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <rect x="30" y="38" width="60" height="55" rx="4" fill="none" stroke="#000" stroke-width="2"/>
+      <rect x="40" y="62" width="40" height="22" rx="2" fill="none" stroke="#000" stroke-width="1.4"/>
+      <path d="M 36 38 Q 24 48 26 65" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 84 38 Q 96 48 94 65" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
+    <!-- di -->
+    <svg viewBox="0 0 65 145" class="fm-prep">
+      <path d="M 12 35 Q 35 35 35 72 Q 35 110 58 110" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+
+    <!-- il bambino -->
+    <svg viewBox="0 0 120 145" class="fm-word">
+      <line x1="10" y1="4" x2="110" y2="4" stroke="#000" stroke-width="4.5" stroke-linecap="square"/>
+      <rect x="10" y="14" width="100" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+      <circle cx="60" cy="35" r="12" fill="none" stroke="#000" stroke-width="2"/>
+      <circle cx="56" cy="34" r="1.6" fill="#000"/>
+      <circle cx="64" cy="34" r="1.6" fill="#000"/>
+      <path d="M 56 40 Q 60 43 64 40" fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="60" y1="47" x2="60" y2="77" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="52" x2="45" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="52" x2="75" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="77" x2="50" y2="95" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="77" x2="70" y2="95" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+
+    <!-- è caduto -->
+    <svg viewBox="0 0 120 145" class="fm-word">
+      <circle cx="60" cy="60" r="50" fill="none" stroke="#000" stroke-width="2.5"/>
+      <path d="M 42 30 Q 75 30 72 60" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 4"/>
+      <polygon points="72,72 64,56 80,56" fill="#000"/>
+      <line x1="60" y1="85" x2="55" y2="95" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="60" y1="85" x2="60" y2="96" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="60" y1="85" x2="65" y2="95" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
+    <!-- a -->
+    <svg viewBox="0 0 65 145" class="fm-prep">
+      <line x1="8" y1="72" x2="48" y2="72" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      <polygon points="57,72 43,65 43,79" fill="#000"/>
+    </svg>
+
+    <!-- terra -->
+    <svg viewBox="0 0 120 145" class="fm-word">
+      <rect x="10" y="10" width="100" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+      <line x1="20" y1="60" x2="100" y2="60" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 20 72 Q 30 65 40 72 Q 50 79 60 72 Q 70 65 80 72 Q 90 79 100 72" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="35" y1="60" x2="30" y2="78" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="60" y1="60" x2="60" y2="80" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="85" y1="60" x2="90" y2="78" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+  </div>
+
+  <!-- ============= OSSERVAZIONI ============= -->
+  <hr class="closing-rule">
+  <div class="closing-label">OSSERVAZIONI</div>
+  <div class="closing-text">
+    <em>del</em> = preposizione <em>di</em> + articolo determinativo sul sostantivo seguente.<br>
+    <em>terra</em> senza marcatori: il quadrato da solo, per la prima volta nudo.<br>
+    Un sostantivo senza articolo non ha né linea sotto né linea di lato.
+  </div>
+
+</body>
+</html>

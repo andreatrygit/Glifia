@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Glifia — Tipografia — Lateralità e direzione di lettura</title>
+<style>
+  body {
+    font-family: Georgia, serif;
+    background: #f4ede0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
+    background-size: 4px 4px;
+    padding: 2rem;
+    color: #000;
+    line-height: 1.6;
+  }
+  .header {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    font-style: italic;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid #000;
+  }
+  .tavola-num {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.5em;
+    opacity: 0.7;
+    margin-top: 2rem;
+  }
+  .tavola-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    letter-spacing: 0.1em;
+    margin: 0.5rem 0;
+  }
+  .tavola-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+  }
+  .rule-short {
+    width: 100px;
+    height: 1px;
+    background: #000;
+    opacity: 0.5;
+    margin: 0 auto 2rem;
+  }
+  .principle {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+  }
+
+  /* sezioni */
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    opacity: 0.7;
+    margin: 2.5rem 0 0.5rem;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 0 0 1rem;
+  }
+  .section-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* righe di confronto glifi */
+  .compare-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+  .compare-item {
+    text-align: center;
+    flex: 0 0 auto;
+  }
+  .compare-item svg {
+    display: block;
+    margin: 0 auto;
+  }
+  .compare-item .glabel {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    opacity: 0.6;
+    margin-top: 0.4rem;
+  }
+  .compare-item .gname {
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+  }
+  .compare-arrow {
+    font-size: 1.6rem;
+    opacity: 0.4;
+    flex: 0 0 auto;
+  }
+  .compare-vs {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    opacity: 0.5;
+    flex: 0 0 auto;
+    font-style: italic;
+  }
+
+  /* blocco LTR / RTL affiancato */
+  .dir-block {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+    align-items: flex-start;
+  }
+  .dir-col {
+    flex: 1 1 260px;
+    min-width: 220px;
+  }
+  .dir-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    opacity: 0.6;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 0.5px solid rgba(0,0,0,0.3);
+  }
+  .dir-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.8rem 0;
+    flex-wrap: wrap;
+  }
+  .dir-row svg {
+    display: block;
+    flex: 0 0 auto;
+  }
+  .dir-row .dlabel {
+    font-style: italic;
+    font-size: 0.9rem;
+    flex: 0 0 auto;
+  }
+
+  .note-box {
+    background: rgba(0,0,0,0.04);
+    border-left: 2px solid rgba(0,0,0,0.3);
+    padding: 0.8rem 1.2rem;
+    font-size: 0.88rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    max-width: 640px;
+  }
+
+  .closing-rule {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 2.5rem 0 1.5rem;
+  }
+  .closing-label {
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
+  .closing-text {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 500px) {
+    body { padding: 1rem; }
+    .header { letter-spacing: 0.25em; font-size: 0.6rem; }
+    .principle { font-size: 0.92rem; }
+    .section-text { font-size: 0.88rem; }
+    .compare-row { gap: 1rem; }
+    .dir-block { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">GLIFIA · MANUALE · EDIZIONE I</div>
+
+  <div class="tavola-num">TIPOGRAFIA</div>
+  <h1 class="tavola-title">LATERALITÀ E DIREZIONE</h1>
+  <div class="tavola-subtitle">come i glifi si adattano alla lingua che li ospita</div>
+  <div class="rule-short"></div>
+
+  <div class="principle">
+    In Glifia la forma porta il significato.<br>
+    Ma alcune forme hanno un orientamento:<br>
+    sanno dove sta il «prima» e dove sta il «dopo».
+  </div>
+
+  <!-- ============= § 1 GLIFI NEUTRI ============= -->
+  <div class="section-label">§ 1 · GLIFI NEUTRI</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    Alcune forme non hanno direzione intrinseca. Il cerchio del verbo, il quadrato chiuso del sostantivo, il pronome: sono simmetrici. Funzionano identici in qualunque lingua, scritta da sinistra o da destra.
+  </div>
+
+  <div class="compare-row">
+    <div class="compare-item">
+      <svg width="60" height="60" viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="24" fill="none" stroke="#000" stroke-width="3"/>
+      </svg>
+      <div class="gname">verbo</div>
+      <div class="glabel">simmetrico</div>
+    </div>
+    <div class="compare-item">
+      <svg width="60" height="60" viewBox="0 0 60 60">
+        <rect x="6" y="6" width="48" height="48" fill="none" stroke="#000" stroke-width="3"/>
+      </svg>
+      <div class="gname">sostantivo</div>
+      <div class="glabel">simmetrico</div>
+    </div>
+    <div class="compare-item">
+      <svg width="60" height="60" viewBox="0 0 60 60">
+        <path d="M 6 6 L 6 54 L 54 54 L 54 6" fill="none" stroke="#000" stroke-width="3"/>
+      </svg>
+      <div class="gname">pronome</div>
+      <div class="glabel">simmetrico</div>
+    </div>
+  </div>
+
+  <!-- ============= § 2 GLIFI CON APERTURA LATERALE ============= -->
+  <div class="section-label">§ 2 · GLIFI CON APERTURA LATERALE</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    L'aggettivo e l'avverbio hanno un lato aperto. La regola è: <em>l'apertura punta verso il «prima»</em> — cioè verso la direzione da cui si legge. In italiano (LTR) il «prima» è a sinistra, quindi l'apertura è a sinistra. In arabo o ebraico (RTL) il «prima» è a destra, e l'apertura si sposta di conseguenza. Non è una scelta estetica: è la semantica del glifo che segue la direzione della frase.
+  </div>
+
+  <div class="dir-block">
+
+    <div class="dir-col">
+      <div class="dir-title">ITALIANO · LTR · apertura a sinistra</div>
+      <div class="dir-row">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <path d="M 6 6 L 54 6 L 54 54 L 6 54" fill="none" stroke="#000" stroke-width="3"/>
+        </svg>
+        <div class="dlabel">aggettivo</div>
+      </div>
+      <div class="dir-row">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <path d="M 30 6 A 24 24 0 0 1 30 54" fill="none" stroke="#000" stroke-width="3"/>
+        </svg>
+        <div class="dlabel">avverbio</div>
+      </div>
+      <div class="dir-row">
+        <!-- indeterminativo: linea verticale a sinistra della forma -->
+        <svg width="80" height="60" viewBox="0 0 80 60">
+          <line x1="6" y1="6" x2="6" y2="54" stroke="#000" stroke-width="3"/>
+          <rect x="18" y="6" width="48" height="48" fill="none" stroke="#000" stroke-width="2.5"/>
+        </svg>
+        <div class="dlabel">art. indeterminativo</div>
+      </div>
+    </div>
+
+    <div class="dir-col">
+      <div class="dir-title">ARABO / EBRAICO · RTL · apertura a destra</div>
+      <div class="dir-row">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <path d="M 54 6 L 6 6 L 6 54 L 54 54" fill="none" stroke="#000" stroke-width="3"/>
+        </svg>
+        <div class="dlabel">aggettivo</div>
+      </div>
+      <div class="dir-row">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <path d="M 30 6 A 24 24 0 0 0 30 54" fill="none" stroke="#000" stroke-width="3"/>
+        </svg>
+        <div class="dlabel">avverbio</div>
+      </div>
+      <div class="dir-row">
+        <!-- indeterminativo: linea verticale a destra della forma in RTL -->
+        <svg width="80" height="60" viewBox="0 0 80 60">
+          <rect x="14" y="6" width="48" height="48" fill="none" stroke="#000" stroke-width="2.5"/>
+          <line x1="74" y1="6" x2="74" y2="54" stroke="#000" stroke-width="3"/>
+        </svg>
+        <div class="dlabel">art. indeterminativo</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============= § 3 GLIFI DIREZIONALI: MIRROR ============= -->
+  <div class="section-label">§ 3 · GLIFI DIREZIONALI — IL MIRROR</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    Alcune preposizioni hanno una direzione semantica esplicita: <em>a</em> punta verso la destinazione, <em>da</em> punta verso l'origine, <em>di</em> scende dal possessore al posseduto. In LTR questi glifi vanno da sinistra verso destra. In RTL si specchiano: l'orientamento del glifo segue quello della scrittura, mantenendo intatto il significato.
+  </div>
+
+  <div class="compare-row">
+
+    <div class="compare-item">
+      <svg width="100" height="60" viewBox="0 0 110 80">
+        <line x1="10" y1="40" x2="90" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="100,40 85,32 85,48" fill="#000"/>
+      </svg>
+      <div class="gname">a</div>
+      <div class="glabel">LTR</div>
+    </div>
+
+    <div class="compare-arrow">⟷</div>
+
+    <div class="compare-item">
+      <svg width="100" height="60" viewBox="0 0 110 80">
+        <line x1="100" y1="40" x2="20" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="10,40 25,32 25,48" fill="#000"/>
+      </svg>
+      <div class="gname">a</div>
+      <div class="glabel">RTL (mirror)</div>
+    </div>
+
+  </div>
+
+  <div class="compare-row">
+
+    <div class="compare-item">
+      <svg width="100" height="60" viewBox="0 0 110 80">
+        <line x1="20" y1="40" x2="100" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="10,40 25,32 25,48" fill="#000"/>
+      </svg>
+      <div class="gname">da</div>
+      <div class="glabel">LTR</div>
+    </div>
+
+    <div class="compare-arrow">⟷</div>
+
+    <div class="compare-item">
+      <svg width="100" height="60" viewBox="0 0 110 80">
+        <line x1="90" y1="40" x2="10" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="100,40 85,32 85,48" fill="#000"/>
+      </svg>
+      <div class="gname">da</div>
+      <div class="glabel">RTL (mirror)</div>
+    </div>
+
+  </div>
+
+  <div class="compare-row">
+
+    <div class="compare-item">
+      <svg width="100" height="70" viewBox="0 0 110 80">
+        <path d="M 20 20 Q 55 20 55 40 Q 55 60 90 60" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">di</div>
+      <div class="glabel">LTR</div>
+    </div>
+
+    <div class="compare-arrow">⟷</div>
+
+    <div class="compare-item">
+      <svg width="100" height="70" viewBox="0 0 110 80">
+        <path d="M 90 20 Q 55 20 55 40 Q 55 60 20 60" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">di</div>
+      <div class="glabel">RTL (mirror)</div>
+    </div>
+
+  </div>
+
+  <div class="note-box">
+    Nota: <em>a</em> e <em>da</em> sono già speculari tra loro in LTR (stessa forma, direzioni opposte). In RTL si specchiano entrambi, mantenendo l'opposizione semantica intatta.
+  </div>
+
+  <!-- ============= § 4 GLIFI INVARIANTI ============= -->
+  <div class="section-label">§ 4 · GLIFI INVARIANTI</div>
+  <hr class="section-divider">
+  <div class="section-text">
+    Alcune preposizioni non hanno direzione orizzontale intrinseca e restano identiche in LTR e RTL: <em>in</em> (cerchio con punto — il contenimento non ha verso), <em>su</em> (la T rovesciata — l'alto è sempre l'alto), <em>con</em> (due tratti paralleli — la simmetria è totale), <em>tra/fra</em> (punto tra due tratti — la posizione mediana non dipende dal verso di lettura).
+  </div>
+
+  <div class="compare-row">
+    <div class="compare-item">
+      <svg width="60" height="60" viewBox="0 0 110 80">
+        <circle cx="55" cy="40" r="22" fill="none" stroke="#000" stroke-width="2.5"/>
+        <circle cx="55" cy="40" r="5" fill="#000"/>
+      </svg>
+      <div class="gname">in</div>
+      <div class="glabel">invariante</div>
+    </div>
+    <div class="compare-item">
+      <svg width="60" height="60" viewBox="0 0 110 80">
+        <line x1="30" y1="52" x2="80" y2="52" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <line x1="55" y1="52" x2="55" y2="20" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">su</div>
+      <div class="glabel">invariante</div>
+    </div>
+    <div class="compare-item">
+      <svg width="60" height="60" viewBox="0 0 110 80">
+        <line x1="47" y1="18" x2="47" y2="62" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <line x1="63" y1="18" x2="63" y2="62" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">con</div>
+      <div class="glabel">invariante</div>
+    </div>
+    <div class="compare-item">
+      <svg width="60" height="60" viewBox="0 0 110 80">
+        <line x1="22" y1="40" x2="42" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="55" cy="40" r="4.5" fill="#000"/>
+        <line x1="68" y1="40" x2="88" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="gname">tra / fra</div>
+      <div class="glabel">invariante</div>
+    </div>
+  </div>
+
+  <!-- ============= CHIUSURA ============= -->
+  <hr class="closing-rule">
+  <div class="closing-label">PRINCIPIO GENERALE</div>
+  <div class="closing-text">
+    In Glifia ogni glifo sa quanta direzione porta con sé.<br>
+    I glifi simmetrici non cambiano mai.<br>
+    I glifi con apertura seguono il «prima» della lingua ospite.<br>
+    I glifi direzionali si specchiano, conservando il loro significato.
+  </div>
+
+</body>
+</html>

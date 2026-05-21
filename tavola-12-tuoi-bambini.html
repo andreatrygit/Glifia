@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Glifia — Tavola XII — I tuoi bambini hanno mangiato troppo poco</title>
+<style>
+  body {
+    font-family: Georgia, serif;
+    background: #f4ede0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
+    background-size: 4px 4px;
+    padding: 2rem;
+    color: #000;
+    line-height: 1.6;
+  }
+  .header { text-align: center; font-size: 0.7rem; letter-spacing: 0.5em; font-style: italic; padding-bottom: 1rem; border-bottom: 0.5px solid #000; }
+  .tavola-num { text-align: center; font-size: 0.75rem; letter-spacing: 0.5em; opacity: 0.7; margin-top: 2rem; }
+  .tavola-title { text-align: center; font-size: clamp(1.2rem, 3.5vw, 1.9rem); letter-spacing: 0.08em; margin: 0.5rem 0; }
+  .tavola-subtitle { text-align: center; font-size: 0.9rem; font-style: italic; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
+  .rule-short { width: 100px; height: 1px; background: #000; opacity: 0.5; margin: 0 auto 2rem; }
+  .phrase-plain { text-align: center; font-size: 1.4rem; font-style: italic; margin: 2rem 0; }
+  .phrase-glifia {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+  .word { text-align: center; flex: 0 0 auto; }
+  .word svg { width: 120px; height: 165px; display: block; margin: 0 auto; }
+  .word.wide svg { width: 150px; height: 165px; }
+  .word-label { font-style: italic; font-size: 0.95rem; margin-top: 0.5rem; }
+  .word-caption { font-size: 0.62rem; letter-spacing: 0.08em; opacity: 0.6; margin-top: 0.15rem; }
+  .closing-rule { border: none; border-top: 1px solid #000; margin: 2.5rem 0 1.5rem; }
+  .closing-label { text-align: center; font-size: 0.7rem; letter-spacing: 0.4em; opacity: 0.7; margin-bottom: 1rem; }
+  .forma-muta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+  }
+  .fm-word { width: 60px; height: 82px; display: block; }
+  .fm-wide { width: 75px; height: 82px; display: block; }
+  .closing-text { text-align: center; font-style: italic; font-size: 0.92rem; line-height: 1.7; max-width: 640px; margin: 0 auto; }
+  @media (max-width: 520px) {
+    body { padding: 1rem; }
+    .word svg { width: 95px; height: 130px; }
+    .word.wide svg { width: 115px; height: 130px; }
+    .fm-word { width: 48px; height: 66px; }
+    .fm-wide { width: 58px; height: 66px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">GLIFIA · MANUALE · EDIZIONE I</div>
+  <div class="tavola-num">TAVOLA XII</div>
+  <h1 class="tavola-title">I TUOI BAMBINI HANNO MANGIATO TROPPO POCO</h1>
+  <div class="tavola-subtitle">possessivo · sostantivo · verbo · indefinito di quantità</div>
+  <div class="rule-short"></div>
+
+  <div class="phrase-plain">«I tuoi bambini hanno mangiato troppo poco.»</div>
+
+  <div class="phrase-glifia">
+
+    <!-- 1. TUOI: aggettivo possessivo 2ª sing. plurale agg. -->
+    <div class="word">
+      <svg viewBox="0 0 120 165">
+        <!-- contenitore aggettivo: aperto verso il prima (no linea det., no plurale persona) -->
+        <path d="M 10 10 L 110 10 L 110 110 L 10 110" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- omino cx=75 -->
+        <circle cx="75" cy="34" r="11" fill="none" stroke="#000" stroke-width="1.8"/>
+        <line x1="75" y1="45" x2="75" y2="66" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="75" y1="51" x2="65" y2="59" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="75" y1="51" x2="85" y2="59" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="75" y1="66" x2="68" y2="78" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="75" y1="66" x2="82" y2="78" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <!-- ↓ sopra il numero -->
+        <line x1="30" y1="34" x2="30" y2="54" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <polygon points="30,62 22,48 38,48" fill="#000"/>
+        <!-- numero 2 -->
+        <text x="30" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#000">2</text>
+        <!-- linea plurale aggettivo sotto il contenitore con distacco -->
+        <line x1="10" y1="124" x2="110" y2="124" stroke="#000" stroke-width="4" stroke-linecap="square"/>
+      </svg>
+      <div class="word-label">tuoi</div>
+      <div class="word-caption">agg. poss. 2ª sing. · plur.</div>
+    </div>
+
+    <!-- 2. BAMBINI: sostantivo con det. sopra e plurale sotto -->
+    <div class="word">
+      <svg viewBox="0 0 120 165">
+        <!-- articolo determinativo SOPRA con distacco -->
+        <line x1="10" y1="4" x2="110" y2="4" stroke="#000" stroke-width="4.5" stroke-linecap="square"/>
+        <!-- quadrato sostantivo -->
+        <rect x="10" y="14" width="100" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- bambino -->
+        <circle cx="60" cy="35" r="12" fill="none" stroke="#000" stroke-width="2"/>
+        <circle cx="56" cy="34" r="1.6" fill="#000"/>
+        <circle cx="64" cy="34" r="1.6" fill="#000"/>
+        <path d="M 56 40 Q 60 43 64 40" fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="60" y1="47" x2="60" y2="72" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="53" x2="47" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="53" x2="73" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="72" x2="51" y2="88" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="60" y1="72" x2="69" y2="88" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- plurale sotto -->
+        <line x1="10" y1="122" x2="110" y2="122" stroke="#000" stroke-width="4.5" stroke-linecap="square"/>
+      </svg>
+      <div class="word-label">bambini</div>
+      <div class="word-caption">sostantivo plurale</div>
+    </div>
+
+    <!-- 3. HANNO MANGIATO: verbo -->
+    <div class="word">
+      <svg viewBox="0 0 120 165">
+        <circle cx="60" cy="65" r="52" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- forchetta -->
+        <line x1="60" y1="90" x2="60" y2="57" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="48" y1="57" x2="48" y2="40" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="56" y1="57" x2="56" y2="40" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="64" y1="57" x2="64" y2="40" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <line x1="72" y1="57" x2="72" y2="40" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <path d="M 48 57 Q 48 64 60 64 Q 72 64 72 57" fill="none" stroke="#000" stroke-width="2"/>
+      </svg>
+      <div class="word-label">hanno mangiato</div>
+      <div class="word-caption">verbo</div>
+    </div>
+
+    <!-- 4. TROPPO POCO: avverbio (semicerchio) + barra fuori sinistra -->
+    <div class="word">
+      <svg viewBox="0 0 120 165">
+        <!-- semicerchio aperto verso il prima -->
+        <path d="M 60 13 A 52 52 0 0 1 60 117" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- barra spostata a destra dentro il semicerchio -->
+        <line x1="36" y1="65" x2="100" y2="65" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        <!-- 3 riferimenti vuoti: min x=46, centro x=66, max x=86 -->
+        <circle cx="46" cy="65" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="66" cy="65" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <circle cx="86" cy="65" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+        <!-- knob valore fuori a sinistra = troppo poco -->
+        <circle cx="28" cy="65" r="6" fill="#000"/>
+      </svg>
+      <div class="word-label">troppo poco</div>
+      <div class="word-caption">avverbio · pos. −1</div>
+    </div>
+
+  </div>
+
+  <!-- FORMA MUTA -->
+  <hr class="closing-rule">
+  <div class="closing-label">FORMA MUTA</div>
+
+  <div class="forma-muta">
+
+    <!-- tuoi -->
+    <svg class="fm-wide" viewBox="0 0 120 165">
+      <path d="M 10 10 L 110 10 L 110 110 L 10 110" fill="none" stroke="#000" stroke-width="2.5"/>
+      <circle cx="75" cy="34" r="11" fill="none" stroke="#000" stroke-width="1.8"/>
+      <line x1="75" y1="45" x2="75" y2="66" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="75" y1="51" x2="65" y2="59" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="75" y1="51" x2="85" y2="59" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="75" y1="66" x2="68" y2="78" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="75" y1="66" x2="82" y2="78" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="30" y1="34" x2="30" y2="54" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="30,62 22,48 38,48" fill="#000"/>
+      <text x="30" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#000">2</text>
+      <line x1="10" y1="124" x2="110" y2="124" stroke="#000" stroke-width="4" stroke-linecap="square"/>
+    </svg>
+
+    <!-- bambini -->
+    <svg class="fm-word" viewBox="0 0 120 165">
+      <line x1="10" y1="4" x2="110" y2="4" stroke="#000" stroke-width="4.5" stroke-linecap="square"/>
+      <rect x="10" y="14" width="100" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+      <circle cx="60" cy="35" r="12" fill="none" stroke="#000" stroke-width="2"/>
+      <circle cx="56" cy="34" r="1.6" fill="#000"/>
+      <circle cx="64" cy="34" r="1.6" fill="#000"/>
+      <path d="M 56 40 Q 60 43 64 40" fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="60" y1="47" x2="60" y2="72" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="53" x2="47" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="53" x2="73" y2="62" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="72" x2="51" y2="88" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="60" y1="72" x2="69" y2="88" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="10" y1="122" x2="110" y2="122" stroke="#000" stroke-width="4.5" stroke-linecap="square"/>
+    </svg>
+
+    <!-- hanno mangiato -->
+    <svg class="fm-word" viewBox="0 0 120 165">
+      <circle cx="60" cy="65" r="52" fill="none" stroke="#000" stroke-width="2.5"/>
+      <line x1="60" y1="90" x2="60" y2="57" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="48" y1="57" x2="48" y2="40" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="56" y1="57" x2="56" y2="40" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="64" y1="57" x2="64" y2="40" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <line x1="72" y1="57" x2="72" y2="40" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 48 57 Q 48 64 60 64 Q 72 64 72 57" fill="none" stroke="#000" stroke-width="2"/>
+    </svg>
+
+    <!-- troppo poco -->
+    <svg class="fm-word" viewBox="0 0 120 165">
+      <path d="M 60 13 A 52 52 0 0 1 60 117" fill="none" stroke="#000" stroke-width="2.5"/>
+      <line x1="36" y1="65" x2="100" y2="65" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="46" cy="65" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+      <circle cx="66" cy="65" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+      <circle cx="86" cy="65" r="6" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+      <circle cx="28" cy="65" r="6" fill="#000"/>
+    </svg>
+
+  </div>
+
+  <!-- OSSERVAZIONI -->
+  <hr class="closing-rule">
+  <div class="closing-label">OSSERVAZIONI</div>
+  <div class="closing-text">
+    <em>tuoi</em>: aggettivo possessivo 2ª sing. con sola linea plurale aggettivo sotto — nessun articolo proprio, nessuna lineetta plurale persona.<br>
+    <em>i bambini</em>: linea determinativa sopra con distacco + linea plurale sotto.<br>
+    <em>troppo poco</em>: knob di valore fuori a sinistra, primo uso in frase della posizione −1.<br>
+    Il contenitore è il semicerchio: <em>troppo poco</em> modifica il verbo, non sostituisce un sostantivo.
+  </div>
+
+</body>
+</html>
