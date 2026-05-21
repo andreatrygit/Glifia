@@ -4,7 +4,7 @@ body {
   background: #f4ede0;
   background-image: radial-gradient(circle, rgba(0,0,0,0.04) 0.4px, transparent 0.5px);
   background-size: 4px 4px;
-  padding: 2rem;
+  padding: 2rem 2rem 6rem;
   color: #000;
   line-height: 1.6;
   max-width: 960px;
