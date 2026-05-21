@@ -269,6 +269,15 @@ body {
 }
 #gnav-panel li a:hover { opacity: 1; }
 #gnav-panel li.gnav-cur a { opacity: 1; font-style: italic; }
+.gnav-group-label {
+  font-size: 0.52rem;
+  letter-spacing: 0.45em;
+  padding: 0.9rem 1.5rem 0.25rem;
+  opacity: 0.35;
+  pointer-events: none;
+  border-top: 0.5px solid rgba(244,237,224,0.1);
+}
+#gnav-panel li:first-child.gnav-group-label { border-top: none; }
 .gnav-num {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
