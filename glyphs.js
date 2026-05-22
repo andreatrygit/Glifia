@@ -4,21 +4,83 @@
   svg.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden';
   svg.innerHTML = `
 
-  <!-- ── contenitori fondamentali ── -->
-  <symbol id="container-sostantivo" viewBox="0 0 60 60">
-    <rect x="6" y="6" width="48" height="48" fill="none" stroke="#000" stroke-width="3"/>
+  <!-- ── containers — viewBox 0 0 120 120, interior 12 12 96 96, cells 8×8 ── -->
+
+  <symbol id="container-sostantivo" viewBox="0 0 120 120">
+    <rect x="12" y="12" width="96" height="96" fill="none" stroke="#000" stroke-width="3"/>
   </symbol>
-  <symbol id="container-verbo" viewBox="0 0 60 60">
-    <circle cx="30" cy="30" r="24" fill="none" stroke="#000" stroke-width="3"/>
+  <symbol id="container-verbo" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="48" fill="none" stroke="#000" stroke-width="3"/>
   </symbol>
-  <symbol id="container-aggettivo" viewBox="0 0 60 60">
-    <path d="M 6 6 L 54 6 L 54 54 L 6 54" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <symbol id="container-aggettivo" viewBox="0 0 120 120">
+    <path d="M 12 12 L 108 12 L 108 108 L 12 108" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
   </symbol>
-  <symbol id="container-avverbio" viewBox="0 0 60 60">
-    <path d="M 30 6 A 24 24 0 0 1 30 54" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <symbol id="container-avverbio" viewBox="0 0 120 120">
+    <path d="M 60 12 A 48 48 0 0 1 60 108" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
   </symbol>
-  <symbol id="container-pronome" viewBox="0 0 60 60">
-    <path d="M 6 6 L 6 54 L 54 54 L 54 6" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  <symbol id="container-pronome" viewBox="0 0 120 120">
+    <path d="M 12 12 L 12 108 L 108 108 L 108 12" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- ── figures — viewBox 0 0 100 100 ── -->
+
+  <symbol id="omino" viewBox="0 0 100 100">
+    <circle cx="50" cy="16" r="14" fill="none" stroke="#000" stroke-width="3"/>
+    <line x1="50" y1="30" x2="50" y2="63" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="50" y1="43" x2="22" y2="58" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="50" y1="43" x2="78" y2="58" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="50" y1="63" x2="32" y2="93" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="50" y1="63" x2="68" y2="93" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- ── diacritics — viewBox 0 0 100 100 ── -->
+
+  <symbol id="diacritic-possessivo" viewBox="0 0 100 100">
+    <line x1="50" y1="5" x2="50" y2="58" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="50,82 26,54 74,54" fill="#000"/>
+  </symbol>
+
+  <symbol id="diacritic-oggetto" viewBox="0 0 100 100">
+    <line x1="95" y1="50" x2="22" y2="50" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="5,50 28,28 28,72" fill="#000"/>
+  </symbol>
+
+  <symbol id="diacritic-riflessivo" viewBox="0 0 100 100">
+    <path d="M 68 10 A 35 35 0 1 1 12 65" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="7,84 2,58 26,66" fill="#000"/>
+  </symbol>
+
+  <!-- ── person numbers — viewBox 0 0 100 100 ── -->
+
+  <symbol id="number-1" viewBox="0 0 100 100">
+    <text x="50" y="50" text-anchor="middle" dominant-baseline="central"
+          font-family="Georgia, serif" font-size="80" fill="#000">1</text>
+  </symbol>
+  <symbol id="number-2" viewBox="0 0 100 100">
+    <text x="50" y="50" text-anchor="middle" dominant-baseline="central"
+          font-family="Georgia, serif" font-size="80" fill="#000">2</text>
+  </symbol>
+  <symbol id="number-3" viewBox="0 0 100 100">
+    <text x="50" y="50" text-anchor="middle" dominant-baseline="central"
+          font-family="Georgia, serif" font-size="80" fill="#000">3</text>
+  </symbol>
+
+  <!-- ── marks — viewBox 0 0 100 100 ── -->
+
+  <symbol id="person-plural-line" viewBox="0 0 1 1" preserveAspectRatio="none">
+    <rect width="1" height="1" fill="#000"/>
+  </symbol>
+
+  <symbol id="plural-line" viewBox="0 0 1 1" preserveAspectRatio="none">
+    <rect width="1" height="1" fill="#000"/>
+  </symbol>
+
+  <symbol id="det-line" viewBox="0 0 1 1" preserveAspectRatio="none">
+    <rect width="1" height="1" fill="#000"/>
+  </symbol>
+
+  <symbol id="indet-line" viewBox="0 0 1 1" preserveAspectRatio="none">
+    <rect width="1" height="1" fill="#000"/>
   </symbol>
 
   `;

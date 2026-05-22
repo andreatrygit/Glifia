@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Glifia — Compositor Demo</title>
+<link rel="stylesheet" href="glifia.css">
+<style>
+  .demo-section { margin: 2.5rem 0 1rem; }
+  .demo-row { display: flex; flex-wrap: wrap; gap: 1.4rem; align-items: flex-end; margin: 1rem 0 2rem; padding-bottom: 1.5rem; }
+  .demo-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; overflow: visible; }
+  .demo-item svg { display: block; width: 90px; height: 90px; overflow: visible; }
+  .demo-item .lbl { font-size: 0.68rem; letter-spacing: 0.08em; text-align: center; opacity: 0.7; max-width: 90px; }
+</style>
+</head>
+<body>
+
+<div class="header">GLIFIA · COMPOSITOR · DEMO</div>
+<h1 class="tavola-title">COMPOSITOR DEMO</h1>
+<div class="tavola-subtitle">output del compositore svg</div>
+<div class="rule-short"></div>
+
+<div class="principle">
+  Ogni glifo è composto programmaticamente da parti atomiche.<br>
+  Ogni parte è definita una sola volta in uno spazio 100×100.<br>
+  Il compositore gestisce posizionamento, scala e canvas.
+</div>
+
+<!-- § 1 CONTAINERS -->
+<div class="section-label">§ 1 · CONTENITORI NUDI</div>
+<hr class="section-divider">
+<div class="demo-row" id="containers"></div>
+
+<!-- § 2 NOUN VARIANTS -->
+<div class="section-label">§ 2 · SOSTANTIVO — marcatori</div>
+<hr class="section-divider">
+<div class="demo-row" id="nouns"></div>
+
+<!-- § 3 PRONOUN SOGGETTO -->
+<div class="section-label">§ 3 · PRONOME — soggetto</div>
+<hr class="section-divider">
+<div class="demo-row" id="pronomi-sogg"></div>
+
+<!-- § 4 PRONOUN POSSESSIVO -->
+<div class="section-label">§ 4 · PRONOME — possessivo</div>
+<hr class="section-divider">
+<div class="demo-row" id="pronomi-poss"></div>
+
+<!-- § 5 PRONOUN OGGETTO / RIFLESSIVO -->
+<div class="section-label">§ 5 · PRONOME — oggetto · riflessivo</div>
+<hr class="section-divider">
+<div class="demo-row" id="pronomi-ogg"></div>
+
+<!-- § 6 POSSESSIVE ADJECTIVE -->
+<div class="section-label">§ 6 · AGGETTIVO POSSESSIVO</div>
+<hr class="section-divider">
+<div class="demo-row" id="agg-poss"></div>
+
+<!-- § 7 RAW compose() CALL -->
+<div class="section-label">§ 7 · compose() grezzo — pronome oggetto plurale</div>
+<hr class="section-divider">
+<div class="demo-row" id="raw"></div>
+
+<script src="glyphs.js"></script>
+<script src="composer.js"></script>
+<script>
+  const { compose, container, noun, pronoun, possAdj } = window.Glifia
+
+  function item(svg, label) {
+    const d = document.createElement('div')
+    d.className = 'demo-item'
+    d.appendChild(svg)
+    const l = document.createElement('div')
+    l.className = 'lbl'
+    l.textContent = label
+    d.appendChild(l)
+    return d
+  }
+
+  function fill(id, list) {
+    const el = document.getElementById(id)
+    list.forEach(([svg, lbl]) => el.appendChild(item(svg, lbl)))
+  }
+
+  // § 1 — bare containers
+  fill('containers', [
+    [container('sostantivo'), 'sostantivo'],
+    [container('verbo'),      'verbo'],
+    [container('aggettivo'),  'aggettivo'],
+    [container('avverbio'),   'avverbio'],
+    [container('pronome'),    'pronome'],
+  ])
+
+  // § 2 — noun variants (omino as placeholder figure)
+  fill('nouns', [
+    [noun('omino'),                              'nudo'],
+    [noun('omino', { plural: true }),            'plurale'],
+    [noun('omino', { article: 'det' }),          'determinativo'],
+    [noun('omino', { article: 'indet' }),        'indeterminativo'],
+    [noun('omino', { article: 'det',  plural: true }), 'det · plur'],
+    [noun('omino', { article: 'indet', plural: true }), 'indet · plur'],
+  ])
+
+  // § 3 — pronoun soggetto
+  fill('pronomi-sogg', [
+    [pronoun(1), 'io'],
+    [pronoun(2), 'tu'],
+    [pronoun(3), 'lui / lei'],
+    [pronoun(1, { personPlural: true }), 'noi'],
+    [pronoun(2, { personPlural: true }), 'voi'],
+    [pronoun(3, { personPlural: true }), 'loro'],
+  ])
+
+  // § 4 — pronoun possessivo
+  fill('pronomi-poss', [
+    [pronoun(1, { diacritic: 'possessivo' }),                          'mio / mia'],
+    [pronoun(2, { diacritic: 'possessivo' }),                          'tuo / tua'],
+    [pronoun(3, { diacritic: 'possessivo' }),                          'suo / sua'],
+    [pronoun(1, { diacritic: 'possessivo', personPlural: true }),      'nostro / nostra'],
+    [pronoun(2, { diacritic: 'possessivo', personPlural: true }),      'vostro / vostra'],
+    [pronoun(3, { diacritic: 'possessivo', personPlural: true }),      'loro'],
+    [pronoun(1, { diacritic: 'possessivo', wordPlural: true }),        'miei / mie'],
+    [pronoun(1, { diacritic: 'possessivo', personPlural: true, wordPlural: true }), 'nostri · plur'],
+  ])
+
+  // § 5 — pronoun oggetto / riflessivo
+  fill('pronomi-ogg', [
+    [pronoun(1, { diacritic: 'oggetto' }),                        'mi (ogg)'],
+    [pronoun(2, { diacritic: 'oggetto' }),                        'ti (ogg)'],
+    [pronoun(3, { diacritic: 'oggetto' }),                        'lo / la (ogg)'],
+    [pronoun(1, { diacritic: 'riflessivo' }),                     'mi (rif)'],
+    [pronoun(2, { diacritic: 'riflessivo' }),                     'ti (rif)'],
+    [pronoun(1, { diacritic: 'oggetto', personPlural: true }),    'ci (ogg)'],
+  ])
+
+  // § 6 — possessive adjective
+  fill('agg-poss', [
+    [possAdj(1), 'mio / mia'],
+    [possAdj(2), 'tuo / tua'],
+    [possAdj(3), 'suo / sua'],
+    [possAdj(1, { personPlural: true }),             'nostro / nostra'],
+    [possAdj(2, { personPlural: true }),             'vostro / vostra'],
+    [possAdj(1, { wordPlural: true }),               'miei / mie'],
+    [possAdj(1, { personPlural: true, wordPlural: true }), 'nostri · plur'],
+  ])
+
+  // § 7 — raw compose() call to show the low-level API
+  fill('raw', [
+    [compose('pronome', [
+      { part: 'omino',             col: 6, row: 1,  colSpan: 7, rowSpan: 12 },
+      { part: 'diacritic-oggetto', col: 1, row: 1,  colSpan: 5, rowSpan: 7  },
+      { part: 'number-1',          col: 1, row: 7,  colSpan: 5, rowSpan: 4 },
+      { part: 'person-plural-line',col: 1, row: 11, colSpan: 5, rowSpan: 2  },
+      { part: 'plural-line', x: 10.5, y: 114, w: 99, h: 3 },
+    ]), 'ci (ogg) plur'],
+  ])
+</script>
+
+<script src="nav.js"></script>
+</body>
+</html>
