@@ -81,28 +81,40 @@
     return compose('sostantivo', slots)
   }
 
+  // number column: col 1-4, omino: col 5-12
+  const NUM_COLS = 4
+  const OMINO_COL = NUM_COLS + 1  // 5
+
+  // person-plural underline: matches number column width, STROKE thick,
+  // placed at ~80% of container height (just below where the digit visually sits)
+  const personPluralMark = {
+    part: 'person-plural-line',
+    x: INNER.x,
+    y: INNER.y + INNER.h * 0.8,
+    w: NUM_COLS * CW,
+    h: STROKE,
+  }
+
   // Omino in pronome container, optional diacritic + person number + plurals
   function pronoun(person, { diacritic, personPlural = false, wordPlural = false } = {}) {
-    const numRow = personPlural ? 7 : 8
     const slots = [
-      { part: 'omino',            col: 6, row: 1,      colSpan: 7, rowSpan: 12 },
-      { part: `number-${person}`, col: 1, row: numRow, colSpan: 5, rowSpan: 4  },
+      { part: 'omino',            col: OMINO_COL, row: 1, colSpan: 12 - NUM_COLS, rowSpan: 12 },
+      { part: `number-${person}`, col: 1,         row: 1, colSpan: NUM_COLS,       rowSpan: 12 },
     ]
-    if (diacritic)    slots.push({ part: `diacritic-${diacritic}`, col: 1, row: 1,  colSpan: 5, rowSpan: 7 })
-    if (personPlural) slots.push({ part: 'person-plural-line',      col: 1, row: 11, colSpan: 5, rowSpan: 2 })
+    if (diacritic)    slots.push({ part: `diacritic-${diacritic}`, col: 1, row: 1, colSpan: NUM_COLS, rowSpan: 7 })
+    if (personPlural) slots.push(personPluralMark)
     if (wordPlural)   slots.push(pluralMark)
     return compose('pronome', slots)
   }
 
   // Same layout as pronoun but aggettivo container, possessivo diacritic always present
   function possAdj(person, { personPlural = false, wordPlural = false } = {}) {
-    const numRow = personPlural ? 7 : 8
     const slots = [
-      { part: 'omino',                col: 6, row: 1,      colSpan: 7, rowSpan: 12 },
-      { part: 'diacritic-possessivo', col: 1, row: 1,      colSpan: 5, rowSpan: 7  },
-      { part: `number-${person}`,     col: 1, row: numRow, colSpan: 5, rowSpan: 4  },
+      { part: 'omino',                col: OMINO_COL, row: 1, colSpan: 12 - NUM_COLS, rowSpan: 12 },
+      { part: 'diacritic-possessivo', col: 1,         row: 1, colSpan: NUM_COLS,       rowSpan: 7  },
+      { part: `number-${person}`,     col: 1,         row: 1, colSpan: NUM_COLS,       rowSpan: 12 },
     ]
-    if (personPlural) slots.push({ part: 'person-plural-line', col: 1, row: 11, colSpan: 5, rowSpan: 2 })
+    if (personPlural) slots.push(personPluralMark)
     if (wordPlural)   slots.push(pluralMark)
     return compose('aggettivo', slots)
   }
