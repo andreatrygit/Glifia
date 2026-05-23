@@ -22,6 +22,26 @@
     <path d="M 12 12 L 12 108 L 108 108 L 108 12" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
   </symbol>
 
+  <!-- RTL variants — opening/direction mirrored -->
+  <symbol id="container-aggettivo-rtl" viewBox="0 0 120 120">
+    <path d="M 108 12 L 12 12 L 12 108 L 108 108" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="container-avverbio-rtl" viewBox="0 0 120 120">
+    <path d="M 60 12 A 48 48 0 0 0 60 108" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="prep-a-rtl" viewBox="0 0 110 80">
+    <line x1="100" y1="40" x2="20" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="10,40 25,32 25,48" fill="#000"/>
+  </symbol>
+  <symbol id="prep-da-rtl" viewBox="0 0 110 80">
+    <line x1="10" y1="40" x2="90" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="100,40 85,32 85,48" fill="#000"/>
+  </symbol>
+  <symbol id="prep-di-rtl" viewBox="0 0 110 80">
+    <path d="M 80 25 Q 55 25 55 40 Q 55 55 30 55" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
   <!-- ── figures — viewBox 0 0 100 100 ── -->
 
   <symbol id="casa" viewBox="0 0 100 100">
