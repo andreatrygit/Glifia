@@ -71,9 +71,13 @@
   }
 
   // Any figure inside sostantivo, optional article / plural
+  const NOUN_PAD = 6  // breathing room between figure and container walls
+
   function noun(figure, { plural = false, article } = {}) {
     const slots = [
-      { part: figure, col: 1, row: 1, colSpan: 12, rowSpan: 12 },
+      { part: figure,
+        x: INNER.x + NOUN_PAD, y: INNER.y + NOUN_PAD,
+        w: INNER.w - NOUN_PAD * 2, h: INNER.h - NOUN_PAD * 2 },
     ]
     if (plural)              slots.push(pluralMark)
     if (article === 'det')   slots.push(detMark)
@@ -81,27 +85,28 @@
     return compose('sostantivo', slots)
   }
 
-  // number column: col 1-4, omino: col 5-12
-  const NUM_COLS = 4
-  const OMINO_COL = NUM_COLS + 1  // 5
+  // number: NUM_COLS wide, placed immediately left of omino (cols NUM_COL–OMINO_COL-1)
+  // left margin (cols 1–NUM_COL-1) keeps the group from hugging the container wall
+  const NUM_COLS  = 3
+  const OMINO_COL = 6
+  const NUM_COL   = OMINO_COL - NUM_COLS   // 3
 
-  // person-plural underline: matches number column width, STROKE thick,
-  // placed at ~80% of container height (just below where the digit visually sits)
+  // person-plural underline: spans the number zone only
   const personPluralMark = {
     part: 'person-plural-line',
-    x: INNER.x,
-    y: INNER.y + INNER.h * 0.8,
+    x: INNER.x + (NUM_COL - 1) * CW + NUM_COLS * CW * 0.25,
+    y: INNER.y + INNER.h * 0.65,
     w: NUM_COLS * CW,
-    h: STROKE,
+    h: STROKE * 0.5,
   }
 
   // Omino in pronome container, optional diacritic + person number + plurals
   function pronoun(person, { diacritic, personPlural = false, wordPlural = false } = {}) {
     const slots = [
-      { part: 'omino',            col: OMINO_COL, row: 1, colSpan: 12 - NUM_COLS, rowSpan: 12 },
-      { part: `number-${person}`, col: 1,         row: 1, colSpan: NUM_COLS,       rowSpan: 12 },
+      { part: 'omino',            col: OMINO_COL, row: 1, colSpan: 13 - OMINO_COL, rowSpan: 12 },
+      { part: `number-${person}`, col: NUM_COL, row: 1, colSpan: NUM_COLS + 1, rowSpan: 12 },
     ]
-    if (diacritic)    slots.push({ part: `diacritic-${diacritic}`, col: 1, row: 1, colSpan: NUM_COLS, rowSpan: 7 })
+    if (diacritic)    slots.push({ part: `diacritic-${diacritic}`, x: INNER.x + (NUM_COL - 1) * CW + NUM_COLS * CW * 0.25, y: INNER.y, w: NUM_COLS * CW, h: 7 * CH })
     if (personPlural) slots.push(personPluralMark)
     if (wordPlural)   slots.push(pluralMark)
     return compose('pronome', slots)
@@ -110,9 +115,9 @@
   // Same layout as pronoun but aggettivo container, possessivo diacritic always present
   function possAdj(person, { personPlural = false, wordPlural = false } = {}) {
     const slots = [
-      { part: 'omino',                col: OMINO_COL, row: 1, colSpan: 12 - NUM_COLS, rowSpan: 12 },
-      { part: 'diacritic-possessivo', col: 1,         row: 1, colSpan: NUM_COLS,       rowSpan: 7  },
-      { part: `number-${person}`,     col: 1,         row: 1, colSpan: NUM_COLS,       rowSpan: 12 },
+      { part: 'omino',                col: OMINO_COL, row: 1, colSpan: 13 - OMINO_COL, rowSpan: 12 },
+      { part: 'diacritic-possessivo', x: INNER.x + (NUM_COL - 1) * CW + NUM_COLS * CW * 0.25, y: INNER.y, w: NUM_COLS * CW, h: 7 * CH },
+      { part: `number-${person}`,     col: NUM_COL, row: 1, colSpan: NUM_COLS + 1, rowSpan: 12 },
     ]
     if (personPlural) slots.push(personPluralMark)
     if (wordPlural)   slots.push(pluralMark)
