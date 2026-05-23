@@ -24,6 +24,12 @@
 
   <!-- ── figures — viewBox 0 0 100 100 ── -->
 
+  <symbol id="casa" viewBox="0 0 100 100">
+    <polygon points="50,8 90,45 10,45" fill="#000"/>
+    <rect x="14" y="44" width="72" height="50" fill="none" stroke="#000" stroke-width="3"/>
+    <rect x="40" y="62" width="20" height="32" fill="none" stroke="#000" stroke-width="2"/>
+  </symbol>
+
   <symbol id="omino" viewBox="0 0 100 100">
     <circle cx="50" cy="16" r="14" fill="none" stroke="#000" stroke-width="3"/>
     <line x1="50" y1="30" x2="50" y2="63" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>

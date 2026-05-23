@@ -11,7 +11,7 @@
   .section-intro { font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; }
   .examples { display: flex; justify-content: space-around; align-items: center; gap: 1rem; margin: 2rem 0; flex-wrap: wrap; }
   .example { text-align: center; flex: 0 0 auto; }
-  .example svg { width: 182px; height: 238px; display: block; margin: 0 auto; }
+  .example glifia-noun svg { width: 120px; height: 120px; display: block; margin: 0 auto; overflow: visible; }
   .example-label { font-style: italic; font-size: 1rem; margin-top: 0.5rem; }
   .example-caption { font-size: 0.72rem; letter-spacing: 0.1em; opacity: 0.6; margin-top: 0.2rem; }
   .arrow { font-size: 1.4rem; color: #000; opacity: 0.6; flex: 0 0 auto; text-align: center; }
@@ -19,7 +19,7 @@
   .closing-text { font-size: 0.95rem; max-width: 600px; }
   @media (max-width: 500px) {
     .examples { flex-direction: column; gap: 1.5rem; }
-    .example svg { width: 110px; height: 145px; }
+    .example glifia-noun svg { width: 90px; height: 90px; }
     .arrow { transform: rotate(90deg); }
   }
 </style>
@@ -46,42 +46,20 @@
   </div>
 
   <div class="examples">
-
     <div class="example">
-      <svg viewBox="0 0 130 170">
-        <!-- linea determinativo SOPRA -->
-        <line x1="25" y1="18" x2="105" y2="18" stroke="#000" stroke-width="5" stroke-linecap="square"/>
-        <!-- quadrato sostantivo -->
-        <rect x="25" y="30" width="80" height="80" fill="none" stroke="#000" stroke-width="2.5"/>
-        <polygon points="45,62 65,45 85,62" fill="#000"/>
-        <rect x="47" y="62" width="36" height="30" fill="none" stroke="#000" stroke-width="1.4"/>
-        <rect x="60" y="77" width="10" height="15" fill="none" stroke="#000" stroke-width="1"/>
-      </svg>
+      <glifia-noun figure="casa" article="det"></glifia-noun>
       <div class="example-label">la casa</div>
       <div class="example-caption">SINGOLARE</div>
     </div>
-
     <div class="arrow">
       → + →
       <div class="arrow-label">+ linea plurale sotto</div>
     </div>
-
     <div class="example">
-      <svg viewBox="0 0 130 170">
-        <!-- linea determinativo SOPRA -->
-        <line x1="25" y1="18" x2="105" y2="18" stroke="#000" stroke-width="5" stroke-linecap="square"/>
-        <!-- quadrato sostantivo -->
-        <rect x="25" y="30" width="80" height="80" fill="none" stroke="#000" stroke-width="2.5"/>
-        <polygon points="45,62 65,45 85,62" fill="#000"/>
-        <rect x="47" y="62" width="36" height="30" fill="none" stroke="#000" stroke-width="1.4"/>
-        <rect x="60" y="77" width="10" height="15" fill="none" stroke="#000" stroke-width="1"/>
-        <!-- linea plurale SOTTO -->
-        <line x1="25" y1="122" x2="105" y2="122" stroke="#000" stroke-width="5" stroke-linecap="square"/>
-      </svg>
+      <glifia-noun figure="casa" article="det" plural></glifia-noun>
       <div class="example-label">le case</div>
       <div class="example-caption">PLURALE</div>
     </div>
-
   </div>
 
   <!-- § 2 INDETERMINATIVO -->
@@ -93,42 +71,20 @@
   </div>
 
   <div class="examples">
-
     <div class="example">
-      <svg viewBox="0 0 130 170">
-        <!-- linea indeterminativo NEL PRIMA (sinistra) -->
-        <line x1="12" y1="30" x2="12" y2="110" stroke="#000" stroke-width="4" stroke-linecap="square"/>
-        <!-- quadrato sostantivo -->
-        <rect x="25" y="30" width="80" height="80" fill="none" stroke="#000" stroke-width="2.5"/>
-        <polygon points="45,62 65,45 85,62" fill="#000"/>
-        <rect x="47" y="62" width="36" height="30" fill="none" stroke="#000" stroke-width="1.4"/>
-        <rect x="60" y="77" width="10" height="15" fill="none" stroke="#000" stroke-width="1"/>
-      </svg>
+      <glifia-noun figure="casa" article="indet"></glifia-noun>
       <div class="example-label">una casa</div>
       <div class="example-caption">SINGOLARE</div>
     </div>
-
     <div class="arrow">
       → + →
       <div class="arrow-label">+ linea plurale sotto</div>
     </div>
-
     <div class="example">
-      <svg viewBox="0 0 130 170">
-        <!-- linea indeterminativo NEL PRIMA -->
-        <line x1="12" y1="30" x2="12" y2="110" stroke="#000" stroke-width="4" stroke-linecap="square"/>
-        <!-- quadrato sostantivo -->
-        <rect x="25" y="30" width="80" height="80" fill="none" stroke="#000" stroke-width="2.5"/>
-        <polygon points="45,62 65,45 85,62" fill="#000"/>
-        <rect x="47" y="62" width="36" height="30" fill="none" stroke="#000" stroke-width="1.4"/>
-        <rect x="60" y="77" width="10" height="15" fill="none" stroke="#000" stroke-width="1"/>
-        <!-- linea plurale SOTTO -->
-        <line x1="25" y1="122" x2="105" y2="122" stroke="#000" stroke-width="5" stroke-linecap="square"/>
-      </svg>
+      <glifia-noun figure="casa" article="indet" plural></glifia-noun>
       <div class="example-label">delle case</div>
       <div class="example-caption">PLURALE</div>
     </div>
-
   </div>
 
   <!-- REGOLA UNIVERSALE -->
@@ -141,6 +97,9 @@
     Le posizioni sono le stesse per ogni forma del sistema.
   </div>
 
+<script src="../glyphs.js"></script>
+<script src="../composer.js"></script>
+<script src="../glifia-elements.js"></script>
 <script src="../nav.js"></script>
 </body>
 </html>
