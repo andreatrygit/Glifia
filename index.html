@@ -46,13 +46,7 @@
   <h1 class="title">GLIFIA</h1>
   <div class="subtitle">un linguaggio visivo a base geometrica</div>
 
-  <div class="ornament">
-    <svg width="60" height="60"><use href="#container-verbo"/></svg>
-    <svg width="60" height="60"><use href="#container-sostantivo"/></svg>
-    <svg width="60" height="60"><use href="#container-aggettivo"/></svg>
-    <svg width="60" height="60"><use href="#container-avverbio"/></svg>
-    <svg width="60" height="60"><use href="#container-pronome"/></svg>
-  </div>
+  <div class="ornament" id="ornament"></div>
   <div class="ornament-rule"></div>
 
   <div class="section-label">PRINCIPIO FONDANTE</div>
@@ -66,35 +60,35 @@
 
   <table class="forms-table">
     <tr>
-      <td class="glyph-cell"><svg width="60" height="60"><use href="#container-sostantivo"/></svg></td>
+      <td class="glyph-cell" data-container="sostantivo"></td>
       <td>
         <div class="name">sostantivo</div>
         <div class="description">quadrato chiuso · oggetto, persona, concetto</div>
       </td>
     </tr>
     <tr>
-      <td class="glyph-cell"><svg width="60" height="60"><use href="#container-verbo"/></svg></td>
+      <td class="glyph-cell" data-container="verbo"></td>
       <td>
         <div class="name">verbo</div>
         <div class="description">cerchio · azione, essere, movimento</div>
       </td>
     </tr>
     <tr>
-      <td class="glyph-cell"><svg width="60" height="60"><use href="#container-aggettivo"/></svg></td>
+      <td class="glyph-cell" data-container="aggettivo"></td>
       <td>
         <div class="name">aggettivo</div>
         <div class="description">quadrato aperto verso il «prima» · qualità del sostantivo</div>
       </td>
     </tr>
     <tr>
-      <td class="glyph-cell"><svg width="60" height="60"><use href="#container-avverbio"/></svg></td>
+      <td class="glyph-cell" data-container="avverbio"></td>
       <td>
         <div class="name">avverbio</div>
         <div class="description">semicerchio aperto verso il «prima» · modifica il verbo</div>
       </td>
     </tr>
     <tr>
-      <td class="glyph-cell"><svg width="60" height="60"><use href="#container-pronome"/></svg></td>
+      <td class="glyph-cell" data-container="pronome"></td>
       <td>
         <div class="name">pronome</div>
         <div class="description">quadrato aperto in alto · sostituto del sostantivo</div>
@@ -103,9 +97,19 @@
   </table>
   <hr class="table-divider">
 
-
-
 <script src="glyphs.js"></script>
+<script src="composer.js"></script>
+<script>
+  const { container } = window.Glifia
+
+  ;['verbo', 'sostantivo', 'aggettivo', 'avverbio', 'pronome'].forEach(id =>
+    document.getElementById('ornament').appendChild(container(id))
+  )
+
+  document.querySelectorAll('[data-container]').forEach(cell =>
+    cell.appendChild(container(cell.dataset.container))
+  )
+</script>
 <script src="nav.js"></script>
 </body>
 </html>
