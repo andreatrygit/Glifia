@@ -102,9 +102,10 @@
   </symbol>
 
   <symbol id="prep-per" viewBox="0 0 110 80">
-    <line x1="10" y1="40" x2="90" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <line x1="10" y1="40" x2="41" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <line x1="59" y1="40" x2="90" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
     <polygon points="100,40 85,32 85,48" fill="#000"/>
-    <circle cx="50" cy="40" r="7" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+    <circle cx="50" cy="40" r="7" fill="none" stroke="#000" stroke-width="2"/>
   </symbol>
 
   <symbol id="prep-in" viewBox="0 0 110 80">
