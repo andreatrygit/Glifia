@@ -20,6 +20,19 @@
     })
   }
 
+  const PREP_VB = '0 0 110 80'
+
+  define('glifia-prep', el => {
+    const type = el.getAttribute('type')
+    if (!type) return null
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    svg.setAttribute('viewBox', PREP_VB)
+    svg.setAttribute('width', '110')
+    svg.setAttribute('height', '80')
+    svg.innerHTML = `<use href="#prep-${type}"/>`
+    return svg
+  })
+
   define('glifia-container', el => {
     const type = el.getAttribute('type')
     if (!type) return null

@@ -89,6 +89,49 @@
     <rect width="1" height="1" fill="#000"/>
   </symbol>
 
+  <!-- ── prepositions — viewBox 0 0 110 80 ── -->
+
+  <symbol id="prep-a" viewBox="0 0 110 80">
+    <line x1="10" y1="40" x2="90" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="100,40 85,32 85,48" fill="#000"/>
+  </symbol>
+
+  <symbol id="prep-da" viewBox="0 0 110 80">
+    <line x1="20" y1="40" x2="100" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="10,40 25,32 25,48" fill="#000"/>
+  </symbol>
+
+  <symbol id="prep-per" viewBox="0 0 110 80">
+    <line x1="10" y1="40" x2="90" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="100,40 85,32 85,48" fill="#000"/>
+    <circle cx="50" cy="40" r="7" fill="#f4ede0" stroke="#000" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="prep-in" viewBox="0 0 110 80">
+    <circle cx="55" cy="40" r="22" fill="none" stroke="#000" stroke-width="2.5"/>
+    <circle cx="55" cy="40" r="5" fill="#000"/>
+  </symbol>
+
+  <symbol id="prep-su" viewBox="0 0 110 80">
+    <line x1="30" y1="52" x2="80" y2="52" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <line x1="55" y1="52" x2="55" y2="20" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="prep-di" viewBox="0 0 110 80">
+    <path d="M 30 25 Q 55 25 55 40 Q 55 55 80 55" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="prep-tra" viewBox="0 0 110 80">
+    <line x1="22" y1="40" x2="42" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="55" cy="40" r="4.5" fill="#000"/>
+    <line x1="68" y1="40" x2="88" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="prep-con" viewBox="0 0 110 80">
+    <line x1="47" y1="18" x2="47" y2="62" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <line x1="63" y1="18" x2="63" y2="62" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
   `;
   document.body.insertBefore(svg, document.body.firstChild);
 })();
