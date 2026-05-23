@@ -9,7 +9,7 @@
       attributeChangedCallback() { this._render() }
       static get observedAttributes() {
         return ['type', 'figure', 'person', 'diacritic', 'article',
-                'plural', 'person-plural', 'word-plural']
+                'plural', 'person-plural', 'word-plural', 'dir']
       }
       _render() {
         const svg = render(this)
@@ -45,6 +45,7 @@
     return G().noun(figure, {
       plural:  el.hasAttribute('plural'),
       article: el.getAttribute('article') ?? undefined,
+      dir:     el.getAttribute('dir') ?? 'ltr',
     })
   })
 

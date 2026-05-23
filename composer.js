@@ -60,9 +60,10 @@
   const MY = INNER.y - STROKE / 2        // mark y start = container exterior top
   const MH = INNER.h + STROKE            // mark height  = container exterior height
 
-  const pluralMark  = { part: 'plural-line', x: MX,               y: INNER.y + INNER.h + STROKE * 2, w: MW,  h: STROKE }
-  const detMark     = { part: 'det-line',    x: MX,               y: INNER.y - STROKE * 3,           w: MW,  h: STROKE }
-  const indetMark   = { part: 'indet-line',  x: INNER.x - STROKE * 3, y: MY,                         w: STROKE, h: MH }
+  const pluralMark    = { part: 'plural-line', x: MX,                          y: INNER.y + INNER.h + STROKE * 2, w: MW,     h: STROKE }
+  const detMark       = { part: 'det-line',    x: MX,                          y: INNER.y - STROKE * 3,           w: MW,     h: STROKE }
+  const indetMark     = { part: 'indet-line',  x: INNER.x - STROKE * 3,        y: MY,                             w: STROKE, h: MH }
+  const indetMarkRtl  = { part: 'indet-line',  x: INNER.x + INNER.w + STROKE * 2, y: MY,                          w: STROKE, h: MH }
 
   // ── helpers — grammar lives here, compositor stays dumb ───────────────────
 
@@ -73,7 +74,7 @@
   // Any figure inside sostantivo, optional article / plural
   const NOUN_PAD = 6  // breathing room between figure and container walls
 
-  function noun(figure, { plural = false, article } = {}) {
+  function noun(figure, { plural = false, article, dir = 'ltr' } = {}) {
     const slots = [
       { part: figure,
         x: INNER.x + NOUN_PAD, y: INNER.y + NOUN_PAD,
@@ -81,7 +82,7 @@
     ]
     if (plural)              slots.push(pluralMark)
     if (article === 'det')   slots.push(detMark)
-    if (article === 'indet') slots.push(indetMark)
+    if (article === 'indet') slots.push(dir === 'rtl' ? indetMarkRtl : indetMark)
     return compose('sostantivo', slots)
   }
 
