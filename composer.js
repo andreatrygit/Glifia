@@ -65,6 +65,21 @@
   const indetMark     = { part: 'indet-line',  x: INNER.x - STROKE * 3,        y: MY,                             w: STROKE, h: MH }
   const indetMarkRtl  = { part: 'indet-line',  x: INNER.x + INNER.w + STROKE * 2, y: MY,                          w: STROKE, h: MH }
 
+  // ── direction ─────────────────────────────────────────────────────────────
+
+  // Reads the page's computed direction so callers don't have to pass dir
+  // explicitly. Explicit dir arguments always override this.
+  function getDir() {
+    return getComputedStyle(document.documentElement).direction || 'ltr'
+  }
+
+  // Containers aggettivo and avverbio have RTL symbol variants; others are symmetric.
+  const RTL_CONTAINER_VARIANTS = new Set(['aggettivo', 'avverbio'])
+
+  function resolveContainer(type, dir) {
+    return dir === 'rtl' && RTL_CONTAINER_VARIANTS.has(type) ? type + '-rtl' : type
+  }
+
   // ── helpers — grammar lives here, compositor stays dumb ───────────────────
 
   function container(id) {
@@ -74,7 +89,7 @@
   // Any figure inside sostantivo, optional article / plural
   const NOUN_PAD = 6  // breathing room between figure and container walls
 
-  function noun(figure, { plural = false, article, dir = 'ltr' } = {}) {
+  function noun(figure, { plural = false, article, dir = getDir() } = {}) {
     const slots = [
       { part: figure,
         x: INNER.x + NOUN_PAD, y: INNER.y + NOUN_PAD,
@@ -125,18 +140,44 @@
     return compose('aggettivo', slots)
   }
 
+  // ── prep — standalone preposition glyph, direction-aware ─────────────────
+
+  const PREP_VB           = '0 0 110 80'
+  const RTL_PREP_VARIANTS = new Set(['a', 'da', 'di', 'per'])
+
+  // type: semantic name ('a', 'da', 'di', 'in', …) or explicit full name ('a-rtl').
+  // Explicit '-rtl' suffixes pass through unchanged (used in documentation pages
+  // that show both variants side by side).
+  function prep(type, { dir = getDir() } = {}) {
+    const symbol = !type.endsWith('-rtl') && dir === 'rtl' && RTL_PREP_VARIANTS.has(type)
+      ? type + '-rtl'
+      : type
+    const svg = document.createElementNS(NS, 'svg')
+    svg.setAttribute('viewBox', PREP_VB)
+    svg.setAttribute('width', '110')
+    svg.setAttribute('height', '80')
+    svg.setAttribute('overflow', 'visible')
+    svg.innerHTML = `<use href="#prep-${symbol}"/>`
+    return svg
+  }
+
   // ── numeral — digit in a container, optional ordinal or multiplicative diacritic ──
 
-  function numeral(digit, containerType, { diacritic } = {}) {
+  function numeral(digit, containerType, { diacritic, dir = getDir() } = {}) {
     const str      = String(digit)
     const hasDiac  = !!diacritic
+    const rtl      = dir === 'rtl'
     const fontSize = str.length > 1 ? 32 : 40
-    const digitX   = hasDiac ? INNER.x + INNER.w * 0.40 : INNER.x + INNER.w * 0.5
+    // In LTR the diacritic sits to the right → shift digit left.
+    // In RTL the diacritic sits to the left  → shift digit right.
+    const digitX   = hasDiac
+      ? INNER.x + INNER.w * (rtl ? 0.60 : 0.40)
+      : INNER.x + INNER.w * 0.5
     const digitY   = INNER.y + INNER.h * 0.63
     const diacChar = diacritic === 'ordinale' ? '°' : '+'
     const diacSize = diacritic === 'moltiplicatore' ? 22 : 20
     const diacW    = diacritic === 'moltiplicatore' ? 'bold' : 'normal'
-    const diacX    = digitX + fontSize * 0.42
+    const diacX    = digitX + (rtl ? -1 : 1) * fontSize * 0.42
     const diacY    = digitY - fontSize * 0.58
 
     const svg = document.createElementNS(NS, 'svg')
@@ -145,13 +186,13 @@
     svg.setAttribute('height', BASE)
     svg.setAttribute('overflow', 'visible')
     svg.innerHTML = [
-      `<use href="#container-${containerType}" x="0" y="0" width="${BASE}" height="${BASE}"/>`,
+      `<use href="#container-${resolveContainer(containerType, dir)}" x="0" y="0" width="${BASE}" height="${BASE}"/>`,
       `<text x="${digitX}" y="${digitY}" text-anchor="middle" font-family="Georgia, serif" font-size="${fontSize}" fill="#000">${str}</text>`,
       hasDiac ? `<text x="${diacX}" y="${diacY}" text-anchor="middle" font-family="Georgia, serif" font-size="${diacSize}" font-weight="${diacW}" fill="#000">${diacChar}</text>` : '',
     ].join('\n')
     return svg
   }
 
-  window.Glifia = { compose, container, noun, pronoun, possAdj, numeral }
+  window.Glifia = { compose, container, noun, pronoun, possAdj, numeral, prep, getDir }
 
 })()

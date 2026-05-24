@@ -127,6 +127,12 @@
     <polygon points="100,40 85,32 85,48" fill="#000"/>
     <circle cx="50" cy="40" r="7" fill="none" stroke="#000" stroke-width="2"/>
   </symbol>
+  <symbol id="prep-per-rtl" viewBox="0 0 110 80">
+    <line x1="100" y1="40" x2="69" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <line x1="51" y1="40" x2="20" y2="40" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <polygon points="10,40 25,32 25,48" fill="#000"/>
+    <circle cx="60" cy="40" r="7" fill="none" stroke="#000" stroke-width="2"/>
+  </symbol>
 
   <symbol id="prep-in" viewBox="0 0 110 80">
     <circle cx="55" cy="40" r="22" fill="none" stroke="#000" stroke-width="2.5"/>

@@ -21,17 +21,12 @@
     })
   }
 
-  const PREP_VB = '0 0 110 80'
-
   define('glifia-prep', el => {
     const type = el.getAttribute('type')
     if (!type) return null
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-    svg.setAttribute('viewBox', PREP_VB)
-    svg.setAttribute('width', '110')
-    svg.setAttribute('height', '80')
-    svg.innerHTML = `<use href="#prep-${type}"/>`
-    return svg
+    return G().prep(type, {
+      dir: el.getAttribute('dir') ?? undefined,
+    })
   })
 
   define('glifia-container', el => {
@@ -46,7 +41,7 @@
     return G().noun(figure, {
       plural:  el.hasAttribute('plural'),
       article: el.getAttribute('article') ?? undefined,
-      dir:     el.getAttribute('dir') ?? 'ltr',
+      dir:     el.getAttribute('dir') ?? undefined,
     })
   })
 
@@ -75,6 +70,7 @@
     if (!digit || !container) return null
     return G().numeral(digit, container, {
       diacritic: el.getAttribute('diacritic') ?? undefined,
+      dir:       el.getAttribute('dir') ?? undefined,
     })
   })
 

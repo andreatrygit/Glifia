@@ -44,7 +44,9 @@ Public API:
 | `noun(figure, opts)` | Figure inside sostantivo. Opts: `plural`, `article` (`'det'`/`'indet'`), `dir` (`'ltr'`/`'rtl'`). |
 | `pronoun(person, opts)` | Omino + person number in pronome. Opts: `diacritic`, `personPlural`, `wordPlural`. |
 | `possAdj(person, opts)` | Same layout as pronoun but in aggettivo container, with possessivo diacritic always present. |
+| `prep(type, opts)` | Standalone preposition SVG. `type` is the semantic name (`'a'`, `'da'`, `'di'`, `'in'`, …). Directional preps auto-select their `-rtl` variant based on `dir`. Explicit full names like `'a-rtl'` pass through unchanged (for documentation pages showing both variants). |
 | `numeral(digit, containerType, opts)` | Digit string in any container. Opts: `diacritic` (`'ordinale'`/`'moltiplicatore'`). Renders `<text>` directly (not via symbols, since digits are parametric). |
+| `getDir()` | Reads `getComputedStyle(document.documentElement).direction`. Used as the default `dir` in all direction-aware functions. |
 
 ### glifia-elements.js
 
