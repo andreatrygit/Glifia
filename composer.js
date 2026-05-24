@@ -172,7 +172,7 @@
 
   // Left slot: diacritic (?/!). Right slot: referent pictogram.
   // The split is 45/48 of INNER width with a small gap between.
-  function interrogative(referent, { mode = 'interrogativo' } = {}) {
+  function interrogative(referent, { mode = 'interrogativo', container = 'pronome' } = {}) {
     const PAD = 4
     const slots = [
       { part: `diacritic-${mode}`,
@@ -182,7 +182,7 @@
         x: INNER.x + INNER.w * 0.55,      y: INNER.y + PAD,
         w: INNER.w * 0.34,                h: INNER.h - PAD * 2 },
     ]
-    return compose('pronome', slots)
+    return compose(container, slots)
   }
 
   // ── numeral — digit in a container, optional ordinal or multiplicative diacritic ──
