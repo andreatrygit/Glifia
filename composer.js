@@ -176,11 +176,11 @@
     const PAD = 4
     const slots = [
       { part: `diacritic-${mode}`,
-        x: INNER.x,                       y: INNER.y + PAD,
-        w: INNER.w * 0.45,                h: INNER.h - PAD * 2 },
+        x: INNER.x + INNER.w * 0.08,      y: INNER.y + PAD,
+        w: INNER.w * 0.34,                h: INNER.h - PAD * 2 },
       { part: INTERROGATIVE_FIGURES[referent],
-        x: INNER.x + INNER.w * 0.52,      y: INNER.y + PAD,
-        w: INNER.w * 0.48,                h: INNER.h - PAD * 2 },
+        x: INNER.x + INNER.w * 0.55,      y: INNER.y + PAD,
+        w: INNER.w * 0.34,                h: INNER.h - PAD * 2 },
     ]
     return compose('pronome', slots)
   }
