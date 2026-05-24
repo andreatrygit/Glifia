@@ -59,7 +59,35 @@
     <line x1="50" y1="63" x2="68" y2="93" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
   </symbol>
 
-  <!-- ── diacritics — viewBox 0 0 100 100 ── -->
+  <!-- ── interrogative / exclamative diacritics — viewBox 0 0 100 100 ── -->
+
+  <symbol id="diacritic-interrogativo" viewBox="0 0 100 100">
+    <path d="M 25 38 Q 25 12 50 12 Q 75 12 75 35 Q 75 56 50 62 L 50 72"
+          fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="50" cy="87" r="5" fill="#000"/>
+  </symbol>
+
+  <symbol id="diacritic-esclamativo" viewBox="0 0 100 100">
+    <line x1="50" y1="12" x2="50" y2="72" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="50" cy="87" r="5" fill="#000"/>
+  </symbol>
+
+  <!-- ── interrogative figures — viewBox 0 0 100 100 ── -->
+
+  <symbol id="figura-scelta" viewBox="0 0 100 100">
+    <line x1="50" y1="92" x2="50" y2="55" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <line x1="50" y1="55" x2="24" y2="18" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <line x1="50" y1="55" x2="76" y2="18" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="24" cy="11" r="6" fill="#000"/>
+    <circle cx="76" cy="11" r="6" fill="#000"/>
+  </symbol>
+
+  <symbol id="figura-quantita" viewBox="0 0 100 100">
+    <path d="M 5 50 Q 22 25 38 50 Q 55 75 72 50 Q 88 25 95 50"
+          fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- ── pronoun diacritics — viewBox 0 0 100 100 ── -->
 
   <symbol id="diacritic-possessivo" viewBox="0 0 100 100">
     <line x1="50" y1="5" x2="50" y2="58" stroke="#000" stroke-width="4" stroke-linecap="round"/>

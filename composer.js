@@ -161,6 +161,30 @@
     return svg
   }
 
+  // ── interrogative / exclamative pronoun ───────────────────────────────────
+
+  const INTERROGATIVE_FIGURES = {
+    persona:  'omino',
+    cosa:     'container-sostantivo',
+    scelta:   'figura-scelta',
+    quantita: 'figura-quantita',
+  }
+
+  // Left slot: diacritic (?/!). Right slot: referent pictogram.
+  // The split is 45/48 of INNER width with a small gap between.
+  function interrogative(referent, { mode = 'interrogativo' } = {}) {
+    const PAD = 4
+    const slots = [
+      { part: `diacritic-${mode}`,
+        x: INNER.x,                       y: INNER.y + PAD,
+        w: INNER.w * 0.45,                h: INNER.h - PAD * 2 },
+      { part: INTERROGATIVE_FIGURES[referent],
+        x: INNER.x + INNER.w * 0.52,      y: INNER.y + PAD,
+        w: INNER.w * 0.48,                h: INNER.h - PAD * 2 },
+    ]
+    return compose('pronome', slots)
+  }
+
   // ── numeral — digit in a container, optional ordinal or multiplicative diacritic ──
 
   function numeral(digit, containerType, { diacritic, dir = getDir() } = {}) {
@@ -193,6 +217,6 @@
     return svg
   }
 
-  window.Glifia = { compose, container, noun, pronoun, possAdj, numeral, prep, getDir }
+  window.Glifia = { compose, container, noun, pronoun, possAdj, interrogative, numeral, prep, getDir }
 
 })()

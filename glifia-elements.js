@@ -10,7 +10,7 @@
       static get observedAttributes() {
         return ['type', 'figure', 'person', 'diacritic', 'article',
                 'plural', 'person-plural', 'word-plural', 'dir',
-                'digit', 'container']
+                'digit', 'container', 'referent', 'mode']
       }
       _render() {
         const svg = render(this)
@@ -61,6 +61,14 @@
     return G().possAdj(Number(person), {
       personPlural: el.hasAttribute('person-plural'),
       wordPlural:   el.hasAttribute('word-plural'),
+    })
+  })
+
+  define('glifia-interrogative', el => {
+    const referent = el.getAttribute('referent')
+    if (!referent) return null
+    return G().interrogative(referent, {
+      mode: el.getAttribute('mode') ?? 'interrogativo',
     })
   })
 
