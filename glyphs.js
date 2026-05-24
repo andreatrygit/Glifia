@@ -67,8 +67,8 @@
   </symbol>
 
   <symbol id="diacritic-oggetto" viewBox="0 0 100 100">
-    <line x1="95" y1="50" x2="22" y2="50" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-    <polygon points="5,50 28,28 28,72" fill="#000"/>
+    <line x1="5" y1="50" x2="78" y2="50" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="95,50 72,28 72,72" fill="#000"/>
   </symbol>
 
   <symbol id="diacritic-riflessivo" viewBox="0 0 100 100">
