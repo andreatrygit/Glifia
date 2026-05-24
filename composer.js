@@ -131,13 +131,13 @@
     const str      = String(digit)
     const hasDiac  = !!diacritic
     const fontSize = str.length > 1 ? 32 : 40
-    const digitX   = hasDiac ? INNER.x + INNER.w * 0.43 : INNER.x + INNER.w * 0.5
+    const digitX   = hasDiac ? INNER.x + INNER.w * 0.40 : INNER.x + INNER.w * 0.5
     const digitY   = INNER.y + INNER.h * 0.63
     const diacChar = diacritic === 'ordinale' ? '°' : '+'
     const diacSize = diacritic === 'moltiplicatore' ? 22 : 20
     const diacW    = diacritic === 'moltiplicatore' ? 'bold' : 'normal'
-    const diacX    = INNER.x + INNER.w * 0.80
-    const diacY    = INNER.y + INNER.h * 0.22
+    const diacX    = digitX + fontSize * 0.42
+    const diacY    = digitY - fontSize * 0.58
 
     const svg = document.createElementNS(NS, 'svg')
     svg.setAttribute('viewBox', `0 0 ${BASE} ${BASE}`)
