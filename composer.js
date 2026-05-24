@@ -125,6 +125,33 @@
     return compose('aggettivo', slots)
   }
 
-  window.Glifia = { compose, container, noun, pronoun, possAdj }
+  // ── numeral — digit in a container, optional ordinal or multiplicative diacritic ──
+
+  function numeral(digit, containerType, { diacritic } = {}) {
+    const str      = String(digit)
+    const hasDiac  = !!diacritic
+    const fontSize = str.length > 1 ? 32 : 40
+    const digitX   = hasDiac ? INNER.x + INNER.w * 0.43 : INNER.x + INNER.w * 0.5
+    const digitY   = INNER.y + INNER.h * 0.63
+    const diacChar = diacritic === 'ordinale' ? '°' : '+'
+    const diacSize = diacritic === 'moltiplicatore' ? 22 : 20
+    const diacW    = diacritic === 'moltiplicatore' ? 'bold' : 'normal'
+    const diacX    = INNER.x + INNER.w * 0.80
+    const diacY    = INNER.y + INNER.h * 0.22
+
+    const svg = document.createElementNS(NS, 'svg')
+    svg.setAttribute('viewBox', `0 0 ${BASE} ${BASE}`)
+    svg.setAttribute('width', BASE)
+    svg.setAttribute('height', BASE)
+    svg.setAttribute('overflow', 'visible')
+    svg.innerHTML = [
+      `<use href="#container-${containerType}" x="0" y="0" width="${BASE}" height="${BASE}"/>`,
+      `<text x="${digitX}" y="${digitY}" text-anchor="middle" font-family="Georgia, serif" font-size="${fontSize}" fill="#000">${str}</text>`,
+      hasDiac ? `<text x="${diacX}" y="${diacY}" text-anchor="middle" font-family="Georgia, serif" font-size="${diacSize}" font-weight="${diacW}" fill="#000">${diacChar}</text>` : '',
+    ].join('\n')
+    return svg
+  }
+
+  window.Glifia = { compose, container, noun, pronoun, possAdj, numeral }
 
 })()

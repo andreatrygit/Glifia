@@ -9,7 +9,8 @@
       attributeChangedCallback() { this._render() }
       static get observedAttributes() {
         return ['type', 'figure', 'person', 'diacritic', 'article',
-                'plural', 'person-plural', 'word-plural', 'dir']
+                'plural', 'person-plural', 'word-plural', 'dir',
+                'digit', 'container']
       }
       _render() {
         const svg = render(this)
@@ -65,6 +66,15 @@
     return G().possAdj(Number(person), {
       personPlural: el.hasAttribute('person-plural'),
       wordPlural:   el.hasAttribute('word-plural'),
+    })
+  })
+
+  define('glifia-numeral', el => {
+    const digit     = el.getAttribute('digit')
+    const container = el.getAttribute('container')
+    if (!digit || !container) return null
+    return G().numeral(digit, container, {
+      diacritic: el.getAttribute('diacritic') ?? undefined,
     })
   })
 
